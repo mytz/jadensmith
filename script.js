@@ -1,59 +1,36 @@
+// Hacer que el rectángulo se pueda arrastrar por la página
 const rectangle = document.querySelector('.rectangle');
 const titleBar = document.querySelector('.title-bar');
 
 let isDragging = false;
-let offsetX, offsetY;
+let offsetX = 0;
+let offsetY = 0;
 
 titleBar.addEventListener('mousedown', (e) => {
     isDragging = true;
-    offsetX = e.clientX - rectangle.offsetLeft;
-    offsetY = e.clientY - rectangle.offsetTop;
-    titleBar.style.cursor = 'grabbing';
+    offsetX = e.clientX - rectangle.getBoundingClientRect().left;
+    offsetY = e.clientY - rectangle.getBoundingClientRect().top;
 });
 
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        const rect = rectangle.getBoundingClientRect();
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
+        let xPos = e.clientX - offsetX;
+        let yPos = e.clientY - offsetY;
 
-        // Calculate new position
-        let newX = e.clientX - offsetX;
-        let newY = e.clientY - offsetY;
+        // Limitar el movimiento a los bordes de la ventana
+        const rectWidth = rectangle.offsetWidth;
+        const rectHeight = rectangle.offsetHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
-        // Limit the rectangle's position to the viewport
-        if (newX < 0) newX = 0;
-        if (newY < 0) newY = 0;
-        if (newX + rect.width > viewportWidth) newX = viewportWidth - rect.width;
-        if (newY + rect.height > viewportHeight) newY = viewportHeight - rect.height;
+        xPos = Math.max(0, Math.min(xPos, windowWidth - rectWidth));
+        yPos = Math.max(0, Math.min(yPos, windowHeight - rectHeight));
 
-        rectangle.style.left = `${newX}px`;
-        rectangle.style.top = `${newY}px`;
+        rectangle.style.left = `${xPos}px`;
+        rectangle.style.top = `${yPos}px`;
     }
 });
 
 document.addEventListener('mouseup', () => {
     isDragging = false;
-    titleBar.style.cursor = 'move';
 });
-
-// Ensure the rectangle remains within bounds on resize
-const updateRectanglePosition = () => {
-    const rect = rectangle.getBoundingClientRect();
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-
-    // Adjust position if the rectangle goes out of bounds
-    let newX = parseFloat(rectangle.style.left) || 0;
-    let newY = parseFloat(rectangle.style.top) || 0;
-
-    if (newX < 0) newX = 0;
-    if (newY < 0) newY = 0;
-    if (newX + rect.width > viewportWidth) newX = viewportWidth - rect.width;
-    if (newY + rect.height > viewportHeight) newY = viewportHeight - rect.height;
-
-    rectangle.style.left = `${newX}px`;
-    rectangle.style.top = `${newY}px`;
-};
-
-window.addEventListener('resize', updateRectanglePosition);
