@@ -15,7 +15,8 @@ body {
     background-color: rgba(76, 175, 80, 0.89); /* Color con opacidad del 89% */
     border-radius: 4px;
     border: 1px solid #545454; /* Trazo interior */
-    position: absolute; /* Permitirá que sea movido por la página */
+    position: absolute;
+    overflow: hidden; /* Evita que el contenido se desborde de las esquinas redondeadas */
 }
 
 /* Estilo de la barra superior (primera sección) */
@@ -23,6 +24,9 @@ body {
     height: 18px;
     background-color: rgba(0, 0, 0, 0.89); /* Color negro con opacidad del 89% */
     border-bottom: 1px solid #545454; /* Trazo interior inferior */
-    border-radius: 4px 4px 0 0; /* Redondeado en la parte superior */
+    margin: -1px; /* Asegura que la barra ocupe toda el área y cubra las esquinas */
+    width: calc(100% + 2px); /* Asegura que cubra completamente el ancho, incluyendo los bordes redondeados */
+    position: relative;
+    z-index: 1; /* Mantiene la barra en la capa superior */
     cursor: move; /* Cambia el cursor a "mover" */
 }
