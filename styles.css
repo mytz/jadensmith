@@ -1,0 +1,28 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Estilo del rectángulo principal */
+.rectangle {
+    width: 588px;
+    height: 519px;
+    background-color: #4CAF50; /* Color del rectángulo principal */
+    border-radius: 4px;
+    border: 1px solid #545454; /* Trazo interior */
+    position: absolute; /* Permitirá que sea movido por la página */
+}
+
+/* Estilo de la barra superior (primera sección) */
+.title-bar {
+    height: 25px;
+    background-color: #000; /* Color negro */
+    border-bottom: 1px solid #545454; /* Trazo interior inferior */
+    border-radius: 4px 4px 0 0; /* Redondeado en la parte superior */
+    cursor: move; /* Cambia el cursor a "mover" */
+}
