@@ -59,7 +59,7 @@ html, body {
 .rectangle {
     position: absolute;
 }
-/* Estilo de la sección 2 */
+
 /* Estilo de la sección 2 */
 .section2 {
     position: absolute;
@@ -70,13 +70,32 @@ html, body {
     overflow: hidden; /* Evita que la sombra se desborde */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* Sombra paralela negra */
     z-index: 0; /* Debajo de la sección 1 */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding-right: 13px; /* Padding a la derecha */
 }
 
+/* Estilo de la imagen en la sección 2 */
 .section2-img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Asegura que la imagen de fondo ocupe todo el contenedor */
     pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
-    user-select: none; /* Evita la selección del texto de la imagen */
-    -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
+}
+
+/* Estilo de la imagen BRATLOGO.png */
+.bratlogo {
+    width: auto; /* Ajusta según el tamaño de la imagen */
+    height: 100%; /* Ocupa todo el alto de la sección */
+    position: absolute;
+    right: 13px; /* Alineada a la derecha con padding */
+    top: 50%; /* Centrada verticalmente */
+    transform: translateY(-50%); /* Centra verticalmente en relación al contenedor */
+    transition: filter 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/* Efecto hover para la imagen BRATLOGO.png */
+.bratlogo:hover {
+    filter: brightness(0) invert(1); /* Cambia el color a blanco */
+    box-shadow: 0 0 13px rgba(0, 0, 0, 1); /* Sombra paralela blanca con opacidad 100% */
 }
