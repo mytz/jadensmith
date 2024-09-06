@@ -6,44 +6,50 @@ body {
     height: 100vh;
     margin: 0;
     background-image: url('fondo2.png'); /* Fondo estilo mosaico */
+    background-size: cover;
 }
 
 /* Estilo del rectángulo principal */
 .rectangle {
     width: 433px;
     height: 382px;
-    background-color: transparent; /* Relleno completamente transparente */
+    background-color: rgba(76, 175, 80, 0); /* Relleno transparente */
     border-radius: 4px;
     border: 1px solid #545454; /* Trazo interior */
-    position: absolute;
+    position: relative;
     overflow: hidden;
 }
 
 /* Estilo de la barra superior (primera sección) */
 .title-bar {
     height: 18px;
-    background-color: rgba(0, 0, 0, 0.89); /* Color negro con opacidad del 89% */
+    background-color: rgba(0, 0, 0, 0.8); /* Color negro con opacidad del 80% */
     border-bottom: 1px solid #545454; /* Trazo interior inferior */
-    margin: -1px; /* Asegura que la barra ocupe toda el área y cubra las esquinas */
-    width: calc(100% + 2px); /* Asegura que cubra completamente el ancho, incluyendo los bordes redondeados */
+    width: 100%;
     position: relative;
-    z-index: 1; /* Mantiene la barra en la capa superior */
+    z-index: 1;
     cursor: move; /* Cambia el cursor a "mover" */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo del texto en la barra superior */
-.title-bar-text {
-    font-family: 'BodoniPosterCompressed', sans-serif; /* Tipografía personalizada */
-    font-size: 8.09pt;
-    color: white;
-    letter-spacing: 940px; /* Separación entre letras */
+/* Estilo de la imagen en la barra superior */
+.title-img {
+    pointer-events: none; /* Evita que se arrastre o se abra en otra pestaña */
+    user-select: none; /* Evita la selección del texto de la imagen */
 }
 
-/* Importar la fuente personalizada */
-@font-face {
-    font-family: 'BodoniPosterCompressed';
-    src: url('BOD_PSTC.TTF') format('truetype');
+/* Mantener el rectángulo centrado al hacer zoom */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    position: absolute;
 }
