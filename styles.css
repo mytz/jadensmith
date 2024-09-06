@@ -84,18 +84,16 @@ html, body {
 /* Imagen BRATLOGO en section2 */
 .bratlogo {
     position: absolute;
-    right: 5px; /* Alineada a la derecha con un padding de 5px */
-    top: 50%; /* Centrado verticalmente */
-    transform: translateY(-50%); /* Centrado verticalmente */
-    width: 290px; /* Ancho de la imagen */
-    height: 131px; /* Alto de la imagen */
-    pointer-events: none; /* No se puede arrastrar ni seleccionar */
+    right: 5px;
+    top: 3px; /* Ajuste para centrar verticalmente */
+    width: 290px; 
+    height: 131px;
+    pointer-events: auto; /* Permite que el hover detecte la imagen */
     user-select: none; /* Evita la selección del texto de la imagen */
     -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
-    z-index: 1; /* Asegura que esté por encima de la imagen de fondo */
+    z-index: 1; /* Asegura que la imagen esté por encima de la sombra */
 }
 
 .bratlogo:hover {
-    filter: brightness(0) invert(1); /* Cambia el color a blanco en hover */
-    box-shadow: 0 0 13px rgba(255, 255, 255, 1); /* Sombra exterior */
+    filter: brightness(150%) drop-shadow(0 0 10px black); /* Cambia el brillo y añade sombra al pasar el mouse */
 }
