@@ -1,46 +1,36 @@
+// Hacer que el rectángulo se pueda arrastrar por la página
 const rectangle = document.querySelector('.rectangle');
 const titleBar = document.querySelector('.title-bar');
+
 let isDragging = false;
-let offsetX, offsetY;
+let offsetX = 0;
+let offsetY = 0;
 
 titleBar.addEventListener('mousedown', (e) => {
     isDragging = true;
-    const rect = rectangle.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
+    offsetX = e.clientX - rectangle.getBoundingClientRect().left;
+    offsetY = e.clientY - rectangle.getBoundingClientRect().top;
 });
 
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
+        let xPos = e.clientX - offsetX;
+        let yPos = e.clientY - offsetY;
 
-        // Limitar los movimientos del rectángulo dentro de los bordes visibles
-        const minX = 0;
-        const minY = 0;
-        const maxX = window.innerWidth - rectangle.offsetWidth;
-        const maxY = window.innerHeight - rectangle.offsetHeight;
+        // Limitar el movimiento a los bordes de la ventana
+        const rectWidth = rectangle.offsetWidth;
+        const rectHeight = rectangle.offsetHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
-        x = Math.max(minX, Math.min(x, maxX));
-        y = Math.max(minY, Math.min(y, maxY));
+        xPos = Math.max(0, Math.min(xPos, windowWidth - rectWidth));
+        yPos = Math.max(0, Math.min(yPos, windowHeight - rectHeight));
 
-        rectangle.style.left = `${x}px`;
-        rectangle.style.top = `${y}px`;
+        rectangle.style.left = `${xPos}px`;
+        rectangle.style.top = `${yPos}px`;
     }
 });
 
 document.addEventListener('mouseup', () => {
     isDragging = false;
-});
-
-window.addEventListener('resize', () => {
-    const rect = rectangle.getBoundingClientRect();
-    const maxX = window.innerWidth - rectangle.offsetWidth;
-    const maxY = window.innerHeight - rectangle.offsetHeight;
-
-    let x = Math.min(rect.left, maxX);
-    let y = Math.min(rect.top, maxY);
-
-    rectangle.style.left = `${x}px`;
-    rectangle.style.top = `${y}px`;
 });
