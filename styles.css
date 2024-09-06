@@ -39,11 +39,23 @@ body {
 .title-img {
     pointer-events: none; /* Evita que se arrastre o se abra en otra pestaña */
     user-select: none; /* Evita la selección del texto de la imagen */
-    transition: opacity 0.3s ease; /* Transición suave para desaparecer la imagen */
 }
 
-.title-bar:hover .title-img {
-    opacity: 0; /* Desaparece la imagen al pasar el mouse por encima */
+/* Estilo de la sección 2 */
+.section2 {
+    width: 433px;
+    height: 137px;
+    position: relative;
+    background-color: transparent;
+    box-shadow: 0px 0px 40px 6px rgba(0, 0, 0, 0.38); /* Sombra paralela negra */
+}
+
+/* Estilo de la imagen en la sección 2 */
+.section2-img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Evita que se arrastre o se haga clic derecho */
+    user-select: none; /* Evita la selección del texto de la imagen */
 }
 
 /* Mantener el rectángulo centrado al hacer zoom */
@@ -54,10 +66,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.rectangle {
-    position: absolute;
 }
 
 .rectangle {
