@@ -1,71 +1,41 @@
-/* Estilos generales */
 body {
+    margin: 0;
+    padding: 0;
+    background: url('fondo2.png') repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-image: url('fondo2.png'); /* Fondo estilo mosaico */
-    background-repeat: repeat; /* Repite la imagen en mosaico */
-    overflow: hidden;
 }
 
-/* Estilo del rectángulo principal */
-.rectangle {
+.container {
+    position: relative;
     width: 433px;
-    height: 382px;
-    background-color: rgba(76, 175, 80, 0); /* Relleno transparente */
-    border-radius: 4px;
-    border: 1px solid #545454; /* Trazo interior */
-    position: relative;
-    overflow: hidden;
 }
 
-/* Estilo de la barra superior (primera sección) */
-.title-bar {
+.section1 {
     height: 18px;
-    background-color: rgba(0, 0, 0, 0.8); /* Color negro con opacidad del 80% */
-    border-bottom: 1px solid #545454; /* Trazo interior inferior */
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    cursor: move; /* Cambia el cursor a "mover" */
+    background: rgba(84, 84, 84, 0.8); /* Color del trazo con 80% de opacidad */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    cursor: move;
 }
 
-/* Estilo de la imagen en la barra superior */
-.title-img {
-    pointer-events: none; /* Evita que se arrastre o se abra en otra pestaña */
-    user-select: none; /* Evita la selección del texto de la imagen */
+.section1 img {
+    width: auto;
+    height: 100%;
+    pointer-events: none; /* Evita que la imagen sea interactiva */
 }
 
-/* Estilo de la sección 2 */
 .section2 {
     width: 433px;
     height: 137px;
-    position: relative;
-    background-color: transparent;
-    box-shadow: 0px 0px 40px 6px rgba(0, 0, 0, 0.38); /* Sombra paralela negra */
-}
-
-/* Estilo de la imagen en la sección 2 */
-.section2-img {
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Evita que se arrastre o se haga clic derecho */
-    user-select: none; /* Evita la selección del texto de la imagen */
-}
-
-/* Mantener el rectángulo centrado al hacer zoom */
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url('SECTION2.png') no-repeat center/cover;
+    box-shadow: 0px 0px 40px 38% black;
+    filter: drop-shadow(0px 0px 6px black); /* Sombra paralela */
+    pointer-events: none; /* Evita que la imagen sea interactiva */
+    user-select: none; /* Evita la selección del contenido */
 }
 
 .rectangle {
