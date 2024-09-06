@@ -5,19 +5,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('fondo2.png'); /* Fondo mosaico */
-    background-repeat: repeat;
+    background-image: url('fondo2.png'); /* Fondo estilo mosaico */
 }
 
 /* Estilo del rectángulo principal */
 .rectangle {
     width: 433px;
     height: 382px;
-    background-color: rgba(76, 175, 80, 0.89); /* Verde con opacidad del 89% */
+    background-color: transparent; /* Relleno completamente transparente */
     border-radius: 4px;
     border: 1px solid #545454; /* Trazo interior */
     position: absolute;
-    overflow: hidden; /* Evita que el contenido se desborde de las esquinas redondeadas */
+    overflow: hidden;
 }
 
 /* Estilo de la barra superior (primera sección) */
@@ -30,13 +29,21 @@ body {
     position: relative;
     z-index: 1; /* Mantiene la barra en la capa superior */
     cursor: move; /* Cambia el cursor a "mover" */
-    display: flex; /* Flexbox para centrar contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Imagen centrada en la sección 1 */
-.title-bar img {
-    max-height: 100%;
-    max-width: 100%;
+/* Estilo del texto en la barra superior */
+.title-bar-text {
+    font-family: 'BodoniPosterCompressed', sans-serif; /* Tipografía personalizada */
+    font-size: 8.09pt;
+    color: white;
+    letter-spacing: 940px; /* Separación entre letras */
+}
+
+/* Importar la fuente personalizada */
+@font-face {
+    font-family: 'BodoniPosterCompressed';
+    src: url('BOD_PSTC.TTF') format('truetype');
 }
