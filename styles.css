@@ -46,23 +46,34 @@ body {
     opacity: 0; /* Desaparece la imagen al pasar el mouse por encima */
 }
 
-/* Estilo de la sección 2 */
-.section2 {
-    width: 433px;
-    height: 137px;
-    position: absolute;
-    top: 18px; /* Empieza justo debajo de la sección 1 */
-    left: 0;
-    background-color: transparent; /* Fondo transparente */
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* Sombra paralela negra */
-    overflow: hidden; /* Evita que el contenido se desborde */
-    z-index: 0; /* Asegura que esté debajo de la sección 1 */
+/* Mantener el rectángulo centrado al hacer zoom */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilo de la imagen de fondo en la sección 2 */
+.rectangle {
+    position: absolute;
+}
+/* Estilo de la sección 2 */
+.section2 {
+    position: absolute;
+    top: 18px; /* Inicia justo debajo de la sección 1 */
+    left: 0;
+    width: 433px; /* Ancho igual a la imagen de fondo */
+    height: 137px; /* Alto igual a la imagen de fondo */
+    overflow: hidden; /* Evita que la sombra se desborde */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* Sombra paralela negra */
+    z-index: 0; /* Debajo de la sección 1 */
+}
+
 .section2-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    pointer-events: none; /* Evita que la imagen sea arrastrable o detectable */
+    object-fit: cover; /* Asegura que la imagen de fondo ocupe todo el contenedor */
+    pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
 }
