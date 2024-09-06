@@ -62,21 +62,20 @@ html, body {
 /* Estilo de la sección 2 */
 /* Estilo de la sección 2 */
 .section2 {
-    position: absolute;
-    top: 18px; /* Inicia justo debajo de la sección 1 */
-    left: 0;
-    width: 433px; /* Ancho igual a la imagen de fondo */
-    height: 137px; /* Alto igual a la imagen de fondo */
-    overflow: hidden; /* Evita que la sombra se desborde */
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* Sombra paralela negra */
-    z-index: 0; /* Debajo de la sección 1 */
+    position: relative;
+    width: 433px;
+    height: 137px;
+    background-image: url('SECTION2.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.38);
 }
 
-.section2-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen de fondo ocupe todo el contenedor */
-    pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
-    user-select: none; /* Evita la selección del texto de la imagen */
-    -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
+.brat-logo {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 290px;
+    height: 131px;
 }
