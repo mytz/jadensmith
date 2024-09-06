@@ -5,14 +5,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-image: url('fondo2.png'); /* Fondo mosaico */
+    background-repeat: repeat;
 }
 
 /* Estilo del rectángulo principal */
 .rectangle {
     width: 433px;
     height: 382px;
-    background-color: rgba(76, 175, 80, 0.89); /* Color con opacidad del 89% */
+    background-color: rgba(76, 175, 80, 0.89); /* Verde con opacidad del 89% */
     border-radius: 4px;
     border: 1px solid #545454; /* Trazo interior */
     position: absolute;
@@ -29,4 +30,13 @@ body {
     position: relative;
     z-index: 1; /* Mantiene la barra en la capa superior */
     cursor: move; /* Cambia el cursor a "mover" */
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Imagen centrada en la sección 1 */
+.title-bar img {
+    max-height: 100%;
+    max-width: 100%;
 }
