@@ -6,17 +6,22 @@ body {
     height: 100vh;
     margin: 0;
     background-image: url('fondo2.png'); /* Fondo estilo mosaico */
-    background-size: auto; /* Asegura que el fondo sea pequeño y se repita en mosaico */
+    background-repeat: repeat; /* Repite la imagen en mosaico */
+    overflow: hidden;
 }
 
 /* Estilo del rectángulo principal */
 .rectangle {
     width: 433px;
     height: 382px;
-    background-color: rgba(255, 255, 255, 0); /* Relleno completamente transparente */
+    background-color: transparent; /* Fondo del rectángulo completamente transparente */
     border-radius: 4px;
     border: 1px solid #545454; /* Trazo interior */
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* Evita que el contenido se desborde de las esquinas redondeadas */
 }
 
 /* Estilo de la barra superior (primera sección) */
@@ -24,18 +29,17 @@ body {
     height: 18px;
     background-color: rgba(0, 0, 0, 0.8); /* Color negro con opacidad del 80% */
     border-bottom: 1px solid #545454; /* Trazo interior inferior */
+    width: calc(100% + 2px); /* Asegura que cubra completamente el ancho, incluyendo los bordes redondeados */
+    position: relative;
     cursor: move; /* Cambia el cursor a "mover" */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
 }
 
 /* Estilo de la imagen en la barra superior */
-.title-image {
-    pointer-events: none; /* Desactiva la capacidad de arrastrar la imagen */
-    user-drag: none; /* Desactiva el arrastre de la imagen */
+.no-drag {
+    user-drag: none; 
+    user-select: none;
+    pointer-events: none; /* Evita que la imagen sea interactiva */
 }
