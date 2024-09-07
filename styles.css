@@ -110,20 +110,25 @@ html, body {
     background-image: url('FRIENDSFONDO.png');
     background-size: cover;
     box-shadow: 0px 0px 40px 6% black;
-    object-fit: cover; /* Asegura que la imagen de fondo ocupe todo el contenedor */
-    pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
-    user-select: none; /* Evita la selección del texto de la imagen */
-    -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
     overflow: hidden; /* Asegura que los botones no sobresalgan */
 }
 
-
-/* Sombra paralela para la sección 4 */
-.section-4 img {
+/* Asegurar que la imagen no sea seleccionable ni arrastrable */
+.section-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0px 0px 40px 6% black;
+    background-image: url('FRIENDSFONDO.png');
+    background-size: cover;
+    pointer-events: none; /* Evita la interacción con la imagen */
+    user-select: none; /* Evita la selección de la imagen */
+    -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
+    z-index: 1; /* Coloca la imagen detrás del texto */
 }
+
 
 
 .buttons {
@@ -154,20 +159,20 @@ html, body {
     content: url('AMIGO3F.png'); /* Cambia la imagen al pasar el mouse */
 }
 
+
 .section4-text {
     color: black; /* Color negro para el texto */
     position: absolute;
     bottom: 65px; /* Ajustar el padding hacia abajo */
     left: 20px; /* Ajustar el padding a la izquierda */
     right: 22px; /* Ajustar el padding a la derecha */
-    color: rgba(0, 0, 0, 1); /* Cambiar el color del texto según tu preferencia */
     line-height: 1;
     text-align: justify;
     font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
     font-weight: 400; /* Peso normal */
     font-style: normal; /* Normal */
     user-select: text; /* Permitir la selección de texto */
-    z-index: 2; /* Asegurarse de que el texto esté por encima de los botones */
+    z-index: 2; /* Asegurar que el texto esté por encima de la imagen */
 }
 
 .section4-text .space-mono-bold {
