@@ -166,6 +166,7 @@ html, body {
     font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
     font-weight: 400; /* Peso normal */
     font-style: normal; /* Normal */
+    user-select: text; /* Permitir la selección de texto */
     z-index: 2; /* Asegurarse de que el texto esté por encima de los botones */
 }
 
