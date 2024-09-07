@@ -125,35 +125,40 @@ html, body {
     box-shadow: 0px 0px 40px 6% black;
 }
 
-.buttons {
+/* Estilo para los botones en la sección 4 */
+.button {
     position: absolute;
     bottom: 12px;
-    left: 18px;
-    display: flex;
-    gap: 18px; /* Espacio entre los botones */
-    pointer-events: all; /* Permite la interacción con los botones */
-}
-
-.btn {
-    width: auto;
-    height: auto;
+    height: 50px; /* Ajusta la altura según sea necesario */
+    width: 50px; /* Ajusta el ancho según sea necesario */
+    background-size: cover;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Efecto de transición suave */
-    pointer-events: all;
 }
 
-.btn:hover {
-    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+/* Posicionamiento específico para cada botón */
+#button1 {
+    left: 18px;
+    background-image: url('AMIGO1.png');
 }
 
-.amigo1:hover {
-    content: url('AMIGO1A.png'); /* Cambia la imagen al pasar el mouse */
+#button1:hover {
+    background-image: url('AMIGO1A.png');
 }
 
-.amigo2:hover {
-    content: url('AMIGO2A.png'); /* Cambia la imagen al pasar el mouse */
+#button2 {
+    left: calc(18px + 50px + 18px); /* Ajusta según el tamaño del primer botón y el espaciado */
+    background-image: url('AMIGO2.png');
 }
 
-.amigo3:hover {
-    content: url('AMIGO3A.png'); /* Cambia la imagen al pasar el mouse */
+#button2:hover {
+    background-image: url('AMIGO2A.png');
+}
+
+#button3 {
+    left: calc(18px + 50px + 18px + 50px + 18px); /* Ajusta según el tamaño del segundo botón y el espaciado */
+    background-image: url('AMIGO3.png');
+}
+
+#button3:hover {
+    background-image: url('AMIGO3A.png');
 }
