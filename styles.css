@@ -157,10 +157,12 @@ html, body {
 .section4-text {
     color: black; /* Color negro para el texto */
     position: absolute;
-    bottom: 12px; /* Ajustar el padding hacia abajo */
+    bottom: 65px; /* Ajustar el padding hacia abajo */
     left: 20px; /* Ajustar el padding a la izquierda */
-    right: 20px; /* Ajustar el padding a la derecha */
-    color: #fff; /* Cambiar el color del texto según tu preferencia */
+    right: 22px; /* Ajustar el padding a la derecha */
+    color: rgba(0, 0, 0, 1); /* Cambiar el color del texto según tu preferencia */
+    line-height: 1.5;
+    text-align: justify;
     font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
     font-weight: 400; /* Peso normal */
     font-style: normal; /* Normal */
