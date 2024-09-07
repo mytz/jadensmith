@@ -161,7 +161,7 @@ html, body {
     left: 20px; /* Ajustar el padding a la izquierda */
     right: 22px; /* Ajustar el padding a la derecha */
     color: rgba(0, 0, 0, 1); /* Cambiar el color del texto según tu preferencia */
-    line-height: 1.5;
+    line-height: 1;
     text-align: justify;
     font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
     font-weight: 400; /* Peso normal */
