@@ -155,6 +155,7 @@ html, body {
 }
 
 .section4-text {
+    color: black; /* Color negro para el texto */
     position: absolute;
     bottom: 12px; /* Ajustar el padding hacia abajo */
     left: 20px; /* Ajustar el padding a la izquierda */
