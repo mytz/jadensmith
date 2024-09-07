@@ -143,13 +143,13 @@ html, body {
 }
 
 .amigo1:hover {
-    content: url('AMIGO1A.png'); /* Cambia la imagen al pasar el mouse */
+    content: url('AMIGO1C.png'); /* Cambia la imagen al pasar el mouse */
 }
 
 .amigo2:hover {
-    content: url('AMIGO2B.png'); /* Cambia la imagen al pasar el mouse */
+    content: url('AMIGO2C.png'); /* Cambia la imagen al pasar el mouse */
 }
 
 .amigo3:hover {
-    content: url('AMIGO3A.png'); /* Cambia la imagen al pasar el mouse */
+    content: url('AMIGO3C.png'); /* Cambia la imagen al pasar el mouse */
 }
