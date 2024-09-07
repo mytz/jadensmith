@@ -99,6 +99,7 @@ html, body {
 }
 
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 4 */
+
 .section-4 {
     width: 433px;
     height: 120px;
@@ -113,6 +114,7 @@ html, body {
     pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
     user-select: none; /* Evita la selección del texto de la imagen */
     -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
+    overflow: hidden; /* Asegura que los botones no sobresalgan */
 }
 
 
@@ -121,4 +123,37 @@ html, body {
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 40px 6% black;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 12px;
+    left: 18px;
+    display: flex;
+    gap: 18px; /* Espacio entre los botones */
+    pointer-events: all; /* Permite la interacción con los botones */
+}
+
+.btn {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Efecto de transición suave */
+    pointer-events: all;
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.amigo1:hover {
+    content: url('AMIGO1A.png'); /* Cambia la imagen al pasar el mouse */
+}
+
+.amigo2:hover {
+    content: url('AMIGO2A.png'); /* Cambia la imagen al pasar el mouse */
+}
+
+.amigo3:hover {
+    content: url('AMIGO3A.png'); /* Cambia la imagen al pasar el mouse */
 }
