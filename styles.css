@@ -95,6 +95,6 @@ html, body {
 }
 
 .bratlogo:hover {
-    filter: brightness(0) invert(1) drop-shadow(0 0 13px rgba(0, 0, 0, 1)) drop-shadow(0 0 13px rgba(0, 0, 0, 0.85)); /* Cambia el brillo y añade sombra al pasar el mouse */
+    filter: brightness(0) invert(1) drop-shadow(0 0 13px rgba(0, 0, 0, 1)) drop-shadow(0 0 13px rgba(0, 0, 0, 0.58)); /* Cambia el brillo y añade sombra al pasar el mouse */
 }
 
