@@ -147,7 +147,7 @@ html, body {
 }
 
 .amigo2:hover {
-    content: url('AMIGO2A.png'); /* Cambia la imagen al pasar el mouse */
+    content: url('AMIGO2B.png'); /* Cambia la imagen al pasar el mouse */
 }
 
 .amigo3:hover {
