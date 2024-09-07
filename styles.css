@@ -103,13 +103,18 @@ html, body {
     width: 433px;
     height: 120px;
     position: absolute;
-    bottom: 0; /* Pegado a la parte inferior del rectángulo */
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     background-image: url('FRIENDSFONDO.png');
     background-size: cover;
     box-shadow: 0px 0px 40px 6% black;
+    object-fit: cover; /* Asegura que la imagen de fondo ocupe todo el contenedor */
+    pointer-events: none; /* Evita que se pueda arrastrar o hacer clic derecho sobre la imagen */
+    user-select: none; /* Evita la selección del texto de la imagen */
+    -webkit-user-drag: none; /* Evita que la imagen sea arrastrable en navegadores WebKit */
 }
+
 
 /* Sombra paralela para la sección 4 */
 .section-4 img {
