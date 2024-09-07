@@ -129,7 +129,7 @@ html, body {
 .buttons {
     position: absolute;
     bottom: 12px;
-    left: 18px;
+    left: 20px;
     display: flex;
     gap: 18px; /* Espacio entre los botones */
     pointer-events: all; /* Permite la interacción con los botones */
