@@ -153,3 +153,19 @@ html, body {
 .amigo3:hover {
     content: url('AMIGO3F.png'); /* Cambia la imagen al pasar el mouse */
 }
+
+.section4-text {
+    position: absolute;
+    bottom: 12px; /* Ajustar el padding hacia abajo */
+    left: 20px; /* Ajustar el padding a la izquierda */
+    right: 20px; /* Ajustar el padding a la derecha */
+    color: #fff; /* Cambiar el color del texto según tu preferencia */
+    font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Normal */
+    z-index: 2; /* Asegurarse de que el texto esté por encima de los botones */
+}
+
+.section4-text .space-mono-bold {
+    font-weight: 700; /* Negrita */
+}
