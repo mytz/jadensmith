@@ -95,6 +95,5 @@ html, body {
 }
 
 .bratlogo:hover {
-    filter: brightness(0) invert(1); /* Cambia el color de la imagen a blanco */
-    box-shadow: 0px 0px 13px 6px rgba(0, 0, 0, 0.9); /* Sombra con opacidad fuerte, tamaño y extensión */
+    filter: brightness(0) drop-shadow(0 0 13px rgba(0, 0, 0, 1)); /* Cambia el brillo a blanco y añade una sombra */
 }
