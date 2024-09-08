@@ -19,6 +19,7 @@ body {
     border: 1px solid #545454; /* Trazo interior */
     position: relative;
     overflow: hidden;
+    pointer-events: auto; /* Asegura que los botones sean clicables */
 }
 
 /* Estilo de la barra superior (primera sección) */
@@ -54,10 +55,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.rectangle {
-    position: absolute;
 }
 
 /* Estilo de la sección 2 */
@@ -109,7 +106,6 @@ html, body {
     z-index: -1; /* Asegura que esté detrás de la sección 2 y 4 */
 }
 
-/* Contenedor del reproductor */
 /* Contenedor del reproductor */
 .player {
     position: absolute;
@@ -165,6 +161,13 @@ html, body {
     pointer-events: auto;
 }
 
+/* Asegurar que los íconos sean visibles */
+#backwardButton, #playPauseButton, #forwardButton {
+    display: inline-block; /* Asegura que los íconos se muestren en línea */
+    margin: 0 5px; /* Espacio entre los íconos */
+}
+
+/* Fondo de la sección 3 */
 .fondo-section3 {
     width: 100%;
     height: auto;
@@ -244,7 +247,7 @@ html, body {
     font-family: "Space Mono", monospace; /* Usar la tipografía Space Mono */
     font-weight: 400; /* Peso normal */
     font-style: normal; /* Normal */
-    user-select: text; /* Permitir la selección de texto */
+    user-select: text; /* Permitir la selección del texto */
     z-index: 2; /* Asegurar que el texto esté por encima de la imagen */
 }
 
