@@ -133,7 +133,7 @@ html, body {
 
 /* Botón de pausa visible cuando se está reproduciendo */
 #playPauseButton.fa-pause {
-    display: inline; /* Asegura que el botón de pausa esté visible */
+    display: none; /* Asegura que el botón de pausa no esté visible */
 }
 
 /* Botón de play visible por defecto */
