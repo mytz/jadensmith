@@ -39,7 +39,8 @@ document.addEventListener('mouseup', () => {
 
 // REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 document.addEventListener('DOMContentLoaded', function() {
-    const playPauseButton = document.getElementById('playPauseButton');
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
     const forwardButton = document.getElementById('forwardButton');
     const backwardButton = document.getElementById('backwardButton');
     const songTitle = document.getElementById('songTitle');
@@ -53,39 +54,39 @@ document.addEventListener('DOMContentLoaded', function() {
         songTitle.textContent = songs[songIndex];
     }
 
-    function updateButton() {
-        if (audioPlayer.paused) {
-            playPauseButton.classList.remove('fa-pause');
-            playPauseButton.classList.add('fa-play');
-        } else {
-            playPauseButton.classList.remove('fa-play');
-            playPauseButton.classList.add('fa-pause');
-        }
+    function playAudio() {
+        audioPlayer.play();
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'block';
     }
 
-    playPauseButton.addEventListener('click', function() {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-        } else {
-            audioPlayer.pause();
-        }
-        updateButton(); // Actualiza el botón después de reproducir o pausar
+    function pauseAudio() {
+        audioPlayer.pause();
+        playButton.style.display = 'block';
+        pauseButton.style.display = 'none';
+    }
+
+    playButton.addEventListener('click', function() {
+        playAudio();
+    });
+
+    pauseButton.addEventListener('click', function() {
+        pauseAudio();
     });
 
     forwardButton.addEventListener('click', function() {
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
-        audioPlayer.play();
-        updateButton(); // Actualiza el botón después de cambiar la canción
+        playAudio(); // Reproduce la canción automáticamente
     });
 
     backwardButton.addEventListener('click', function() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
-        audioPlayer.play();
-        updateButton(); // Actualiza el botón después de cambiar la canción
+        playAudio(); // Reproduce la canción automáticamente
     });
 
-    updateButton(); // Asegura que el botón esté en el estado correcto al inicio
+    playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
+
