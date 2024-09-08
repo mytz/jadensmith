@@ -85,4 +85,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar primera canción
     updateSong();
 });
-
