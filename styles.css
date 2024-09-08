@@ -112,7 +112,6 @@ html, body {
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
 /* Contenedor del reproductor */
-/* Contenedor del reproductor */
 .player {
     position: absolute;
     bottom: 0;
@@ -148,7 +147,6 @@ html, body {
     color: black;
     cursor: pointer;
 }
-
 
 
 .fondo-section3 {
