@@ -112,7 +112,63 @@ html, body {
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
 
+.player {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 30px 50px 80px 0; /* Espacio alrededor de los botones y el texto */
+    z-index: 1; /* Asegura que esté encima de .section3 */
+    width: 100%; /* Asegura que el contenedor cubra el ancho de .section3 */
+    height: auto;
+}
 
+.player i {
+    color: black; /* Color de los iconos */
+    cursor: pointer;
+    position: absolute;
+}
+
+.fa-play,
+.fa-pause {
+    width: 17px;
+    height: 20px;
+}
+
+.fa-play {
+    bottom: 30px; /* Ajusta el padding inferior */
+    right: 50px; /* Ajusta el padding derecho */
+}
+
+.fa-pause {
+    bottom: 30px; /* Ajusta el padding inferior */
+    right: 50px; /* Ajusta el padding derecho */
+}
+
+.fa-forward,
+.fa-backward {
+    width: 15px;
+    height: 12px;
+}
+
+.fa-forward {
+    bottom: 35px; /* Ajusta el padding inferior */
+    right: 40px; /* Ajusta el padding derecho */
+}
+
+.fa-backward {
+    bottom: 35px; /* Ajusta el padding inferior */
+    right: 60px; /* Ajusta el padding derecho */
+}
+
+.song-title {
+    position: absolute;
+    bottom: 80px; /* Espacio desde el fondo de la imagen */
+    right: 0;
+    color: black;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .fondo-section3 {
     width: 100%;
