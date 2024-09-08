@@ -121,6 +121,9 @@ html, body {
 
 /* Botón play/pause */
 #playPauseButton {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
     font-size: 20px;
     color: black;
     cursor: pointer;
