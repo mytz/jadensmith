@@ -40,8 +40,8 @@ document.addEventListener('mouseup', () => {
 // REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('playPauseButton');
-    const forwardButton = document.querySelector('.fa-forward');
-    const backwardButton = document.querySelector('.fa-backward');
+    const forwardButton = document.querySelector('.forward-button');
+    const backwardButton = document.querySelector('.backward-button');
     const songTitle = document.getElementById('songTitle');
     
     let isPlaying = false;
@@ -55,30 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isPlaying) {
             playPauseButton.classList.remove('fa-pause');
             playPauseButton.classList.add('fa-play');
-            // Pausar la canción
+            // Aquí deberías añadir la lógica para pausar la canción
             console.log('Pausar canción');
         } else {
             playPauseButton.classList.remove('fa-play');
             playPauseButton.classList.add('fa-pause');
-            // Reproducir la canción
+            // Aquí deberías añadir la lógica para reproducir la canción
             console.log('Reproducir canción');
         }
         isPlaying = !isPlaying;
     });
 
     forwardButton.addEventListener('click', function() {
-        currentSong = currentSong === 'Charli xcx - Girl, so confusing.mp3' 
-            ? 'Blue Foundation - Eyes On Fire.mp3' 
-            : 'Charli xcx - Girl, so confusing.mp3';
+        // Aquí puedes añadir la lógica para avanzar a la siguiente canción
+        currentSong = 'Blue Foundation - Eyes On Fire.mp3';
         updateSong();
         console.log('Siguiente canción:', currentSong);
     });
 
     backwardButton.addEventListener('click', function() {
-        currentSong = currentSong === 'Charli xcx - Girl, so confusing.mp3' 
-            ? 'Blue Foundation - Eyes On Fire.mp3' 
-            : 'Charli xcx - Girl, so confusing.mp3';
+        // Aquí puedes añadir la lógica para retroceder a la canción anterior
+        currentSong = 'Charli xcx - Girl, so confusing.mp3';
         updateSong();
         console.log('Canción anterior:', currentSong);
     });
 });
+
