@@ -104,7 +104,6 @@ html, body {
     width: 433px;
     height: auto;
     padding-top: 125px; /* Espacio para empujar el contenido hacia abajo */
-    background-image: url('FONDOSECTION3.png');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
@@ -119,6 +118,7 @@ html, body {
     width: 100%;
     height: auto;
     object-fit: cover;
+    z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
