@@ -112,63 +112,46 @@ html, body {
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
 
+/* Contenedor del reproductor */
 .player {
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 30px 50px 80px 0; /* Espacio alrededor de los botones y el texto */
-    z-index: 1; /* Asegura que esté encima de .section3 */
-    width: 100%; /* Asegura que el contenedor cubra el ancho de .section3 */
-    height: auto;
+    /* Sin padding adicional */
 }
 
-.player i {
-    color: black; /* Color de los iconos */
-    cursor: pointer;
+/* Botón play */
+.play-button {
     position: absolute;
-}
-
-.fa-play,
-.fa-pause {
-    width: 17px;
-    height: 20px;
-}
-
-.fa-play {
-    bottom: 30px; /* Ajusta el padding inferior */
-    right: 50px; /* Ajusta el padding derecho */
-}
-
-.fa-pause {
-    bottom: 30px; /* Ajusta el padding inferior */
-    right: 50px; /* Ajusta el padding derecho */
-}
-
-.fa-forward,
-.fa-backward {
-    width: 15px;
-    height: 12px;
-}
-
-.fa-forward {
-    bottom: 35px; /* Ajusta el padding inferior */
-    right: 40px; /* Ajusta el padding derecho */
-}
-
-.fa-backward {
-    bottom: 35px; /* Ajusta el padding inferior */
-    right: 60px; /* Ajusta el padding derecho */
-}
-
-.song-title {
-    position: absolute;
-    bottom: 80px; /* Espacio desde el fondo de la imagen */
-    right: 0;
+    bottom: 30px;
+    right: 50px;
+    font-size: 20px;
     color: black;
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
+    cursor: pointer;
 }
+
+/* Botón forward */
+.forward-button {
+    position: absolute;
+    bottom: 35px;
+    right: 40px;
+    font-size: 12px;
+    width: 15px; /* Ancho específico */
+    color: black;
+    cursor: pointer;
+}
+
+/* Botón backward */
+.backward-button {
+    position: absolute;
+    bottom: 35px;
+    right: 60px;
+    font-size: 12px;
+    width: 15px; /* Ancho específico */
+    color: black;
+    cursor: pointer;
+}
+
 
 .fondo-section3 {
     width: 100%;
