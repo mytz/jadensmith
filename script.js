@@ -48,9 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
-    // Actualiza la canción y la etiqueta de título
     function updateSong() {
-        console.log('Updating song to:', songs[songIndex]); // Verificar la canción actual
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
         audioPlayer.play();
@@ -58,9 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         playPauseButton.classList.add('fa-pause');
     }
 
-    // Manejar Play/Pause
     playPauseButton.addEventListener('click', function() {
-        console.log('Play/Pause button clicked'); // Verificar clic en el botón
+        console.log('Play/Pause button clicked');
         if (audioPlayer.paused) {
             audioPlayer.play();
             playPauseButton.classList.remove('fa-play');
@@ -72,20 +69,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Manejar Forward
     forwardButton.addEventListener('click', function() {
-        console.log('Forward button clicked'); // Verificar clic en el botón
+        console.log('Forward button clicked');
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
     });
 
-    // Manejar Backward
     backwardButton.addEventListener('click', function() {
-        console.log('Backward button clicked'); // Verificar clic en el botón
+        console.log('Backward button clicked');
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
     });
 
-    // Inicializar primera canción
-    updateSong();
+    updateSong(); // Inicializa la primera canción
 });
