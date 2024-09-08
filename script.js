@@ -45,24 +45,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const songTitle = document.getElementById('songTitle');
     const audioPlayer = document.getElementById('audioPlayer');
 
+    console.log(playPauseButton, forwardButton, backwardButton, songTitle, audioPlayer); // Verificar que todos los elementos están bien enlazados
+
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
     function updateSong() {
+        console.log('Updating song...');
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
-        audioPlayer.play();
-        playPauseButton.classList.remove('fa-play');
-        playPauseButton.classList.add('fa-pause');
+        audioPlayer.play().then(() => {
+            console.log('Song is playing.');
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+        }).catch((error) => {
+            console.log('Error playing the song:', error);
+        });
     }
 
     playPauseButton.addEventListener('click', function() {
-        console.log('Play/Pause button clicked');
         if (audioPlayer.paused) {
-            audioPlayer.play();
-            playPauseButton.classList.remove('fa-play');
-            playPauseButton.classList.add('fa-pause');
+            console.log('Playing song...');
+            audioPlayer.play().then(() => {
+                playPauseButton.classList.remove('fa-play');
+                playPauseButton.classList.add('fa-pause');
+            }).catch((error) => {
+                console.log('Error playing the song:', error);
+            });
         } else {
+            console.log('Pausing song...');
             audioPlayer.pause();
             playPauseButton.classList.remove('fa-pause');
             playPauseButton.classList.add('fa-play');
@@ -70,16 +81,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     forwardButton.addEventListener('click', function() {
-        console.log('Forward button clicked');
+        console.log('Skipping to next song...');
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
     });
 
     backwardButton.addEventListener('click', function() {
-        console.log('Backward button clicked');
+        console.log('Going back to previous song...');
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
     });
+
+    console.log('Initializing first song...');
+    playPauseButton.classList.add('fa-play');
+    updateSong();
+});
 
     playPauseButton.classList.add('fa-play'); // Asegura que el botón de play esté visible al inicio
     updateSong();
