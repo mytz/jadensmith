@@ -26,8 +26,8 @@ document.addEventListener('mousemove', (e) => {
         xPos = Math.max(0, Math.min(xPos, windowWidth - rectWidth));
         yPos = Math.max(0, Math.min(yPos, windowHeight - rectHeight));
 
-        rectangle.style.left = `${xPos}px`;
-        rectangle.style.top = `${yPos}px`;
+        rectangle.style.left = ${xPos}px;
+        rectangle.style.top = ${yPos}px;
     }
 });
 
@@ -37,7 +37,7 @@ document.addEventListener('mouseup', () => {
 
 
 
-// REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+// REPRODUCTOR DE MUSICA 
 document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('playPauseButton');
     const forwardButton = document.getElementById('forwardButton');
@@ -45,58 +45,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const songTitle = document.getElementById('songTitle');
     const audioPlayer = document.getElementById('audioPlayer');
 
-    console.log(playPauseButton, forwardButton, backwardButton, songTitle, audioPlayer); // Verificar que todos los elementos están bien enlazados
-
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
+    // Inicializar la primera canción y mostrar el botón de play
     function updateSong() {
-        console.log('Updating song...');
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
-        audioPlayer.play().then(() => {
-            console.log('Song is playing.');
-            playPauseButton.classList.remove('fa-play');
-            playPauseButton.classList.add('fa-pause');
-        }).catch((error) => {
-            console.log('Error playing the song:', error);
-        });
+        audioPlayer.play();
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
     }
 
+    // Manejar Play/Pause
     playPauseButton.addEventListener('click', function() {
         if (audioPlayer.paused) {
-            console.log('Playing song...');
-            audioPlayer.play().then(() => {
-                playPauseButton.classList.remove('fa-play');
-                playPauseButton.classList.add('fa-pause');
-            }).catch((error) => {
-                console.log('Error playing the song:', error);
-            });
+            audioPlayer.play();
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
         } else {
-            console.log('Pausing song...');
             audioPlayer.pause();
             playPauseButton.classList.remove('fa-pause');
             playPauseButton.classList.add('fa-play');
         }
     });
 
+    // Manejar Forward
     forwardButton.addEventListener('click', function() {
-        console.log('Skipping to next song...');
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
     });
 
+    // Manejar Backward
     backwardButton.addEventListener('click', function() {
-        console.log('Going back to previous song...');
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
     });
 
-    console.log('Initializing first song...');
-    playPauseButton.classList.add('fa-play');
-    updateSong();
-});
-
+    // Inicializar la primera canción
     playPauseButton.classList.add('fa-play'); // Asegura que el botón de play esté visible al inicio
     updateSong();
 });
