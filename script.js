@@ -26,8 +26,8 @@ document.addEventListener('mousemove', (e) => {
         xPos = Math.max(0, Math.min(xPos, windowWidth - rectWidth));
         yPos = Math.max(0, Math.min(yPos, windowHeight - rectHeight));
 
-        rectangle.style.left = ${xPos}px;
-        rectangle.style.top = ${yPos}px;
+        rectangle.style.left = `${xPos}px`;
+        rectangle.style.top = `${yPos}px`;
     }
 });
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
-    // Actualiza la canción y la etiqueta de título
+    // Inicializar la primera canción y mostrar el botón de play
     function updateSong() {
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
@@ -82,9 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSong();
     });
 
-    // Inicializar primera canción
-    updateSong();
-});
     // Inicializar la primera canción
     playPauseButton.classList.add('fa-play'); // Asegura que el botón de play esté visible al inicio
     updateSong();
