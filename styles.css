@@ -101,17 +101,18 @@ html, body {
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
 .section3 {
     position: absolute;
-    bottom: 120px; /* Ajusta según sea necesario para que la sección 4 esté justo encima */
+    top: calc(18px + 137px); /* 18px de la altura de la sección 1 + 137px de la altura de la sección 2 */
     width: 433px;
     height: auto;
     background-image: url('FONDOSECTION3.png');
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 0; /* Menor que el z-index de la sección 4 */
+    z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
     pointer-events: none; /* Para evitar interacción con la imagen de fondo */
     user-select: none; /* Para evitar selección de texto */
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
+
 
 .fondo-section3 {
     width: 100%;
