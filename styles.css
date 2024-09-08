@@ -110,6 +110,7 @@ html, body {
 }
 
 /* Contenedor del reproductor */
+/* Contenedor del reproductor */
 .player {
     position: absolute;
     bottom: 0;
@@ -120,22 +121,22 @@ html, body {
 
 /* Botón play/pause */
 #playPauseButton {
-    position: absolute;
-    bottom: 40px;
-    right: 100px;
     font-size: 20px;
     color: black;
     cursor: pointer;
     z-index: 10;
     pointer-events: auto;
 }
+
+/* Botón de pausa visible cuando se está reproduciendo */
 #playPauseButton.fa-pause {
-    display: none; /* Oculta el botón de pausa */
+    display: inline; /* Asegura que el botón de pausa esté visible */
 }
+
+/* Botón de play visible por defecto */
 #playPauseButton.fa-play {
     display: inline; /* Asegura que el botón de play esté visible */
 }
-
 
 /* Botón forward */
 #forwardButton {
