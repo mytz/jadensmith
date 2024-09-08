@@ -53,44 +53,39 @@ document.addEventListener('DOMContentLoaded', function() {
         songTitle.textContent = songs[songIndex];
     }
 
-    function updateButton(buttonId, iconClass) {
-        const button = document.getElementById(buttonId);
-        const iconElement = button.querySelector('i');
-
-        if (iconElement) {
-            iconElement.className = iconClass;
+    function updateButton() {
+        if (audioPlayer.paused) {
+            playPauseButton.classList.remove('fa-pause');
+            playPauseButton.classList.add('fa-play');
         } else {
-            const newIconElement = document.createElement('i');
-            newIconElement.className = iconClass;
-            button.appendChild(newIconElement);
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
         }
     }
 
     playPauseButton.addEventListener('click', function() {
         if (audioPlayer.paused) {
             audioPlayer.play();
-            updateButton('playPauseButton', 'fa-solid fa-pause');
         } else {
             audioPlayer.pause();
-            updateButton('playPauseButton', 'fa-solid fa-play');
         }
+        updateButton(); // Actualiza el botón después de reproducir o pausar
     });
 
     forwardButton.addEventListener('click', function() {
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
         audioPlayer.play();
-        updateButton('playPauseButton', 'fa-solid fa-pause');
+        updateButton(); // Actualiza el botón después de cambiar la canción
     });
 
     backwardButton.addEventListener('click', function() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
         audioPlayer.play();
-        updateButton('playPauseButton', 'fa-solid fa-pause');
+        updateButton(); // Actualiza el botón después de cambiar la canción
     });
 
-    updateButton('playPauseButton', 'fa-solid fa-play');
-    updateSong();
+    updateButton(); // Asegura que el botón esté en el estado correcto al inicio
+    updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
-
