@@ -114,7 +114,7 @@ html, body {
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 2; /* Asegura que los botones estén por encima de otros elementos */
+    z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
 }
 
 /* Botón play/pause */
@@ -125,6 +125,7 @@ html, body {
     font-size: 20px;
     color: black;
     cursor: pointer;
+    z-index: 10;
 }
 
 /* Botón forward */
@@ -135,6 +136,7 @@ html, body {
     font-size: 12px;
     color: black;
     cursor: pointer;
+    z-index: 10;
 }
 
 /* Botón backward */
@@ -145,6 +147,7 @@ html, body {
     font-size: 12px;
     color: black;
     cursor: pointer;
+    z-index: 10;
 }
 
 .fondo-section3 {
