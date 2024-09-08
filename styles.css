@@ -120,40 +120,35 @@ html, body {
 }
 
 /* Botón play/pause */
-.play-button {
+#playPauseButton {
     position: absolute;
     bottom: 40px;
     right: 104px;
-    height: 20px;
-    width: 17px;
     font-size: 20px;
     color: black;
     cursor: pointer;
 }
 
 /* Botón forward */
-.forward-button {
+#forwardButton {
     position: absolute;
     bottom: 45px;
     right: 79px;
-    height: 12px;
-    width: 15px;
     font-size: 12px;
     color: black;
     cursor: pointer;
 }
 
 /* Botón backward */
-.backward-button {
+#backwardButton {
     position: absolute;
     bottom: 45px;
     right: 122px;
-    height: 12px;
-    width: 15px;
     font-size: 12px;
     color: black;
     cursor: pointer;
 }
+
 
 
 .fondo-section3 {
