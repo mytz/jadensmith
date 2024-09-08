@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSong() {
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
+        // Aquí podrías agregar más lógica si es necesario para el efecto marquee
     }
 
     function playAudio() {
@@ -97,4 +98,3 @@ document.addEventListener('DOMContentLoaded', function() {
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
-
