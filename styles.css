@@ -100,13 +100,11 @@ html, body {
 
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
 .section3 {
-    position: relative; /* Cambia a relative para que el padding-top funcione como esperado */
+    position: relative;
     width: 433px;
-    height: auto;
+    height: 100%; /* Ajusta al 100% de la altura disponible o usa una altura fija si prefieres */
     padding-top: 125px; /* Espacio para empujar el contenido hacia abajo */
-    background-image: url('FONDOSECTION3.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: transparent; /* Asegúrate de que no haya un color de fondo que afecte la visibilidad */
     z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
     pointer-events: none; /* Para evitar interacción con la imagen de fondo */
     user-select: none; /* Para evitar selección de texto */
@@ -114,12 +112,12 @@ html, body {
 }
 
 .fondo-section3 {
-    position: absolute; /* Para que el fondo se posicione correctamente */
-    top: 0; /* Posición desde la parte superior */
-    left: 0; /* Posición desde la izquierda */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%; /* Asegura que la imagen cubra todo el contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
