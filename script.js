@@ -34,3 +34,51 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
     isDragging = false;
 });
+
+
+
+// REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+document.addEventListener('DOMContentLoaded', function() {
+    const playPauseButton = document.getElementById('playPauseButton');
+    const forwardButton = document.querySelector('.fa-forward');
+    const backwardButton = document.querySelector('.fa-backward');
+    const songTitle = document.getElementById('songTitle');
+    
+    let isPlaying = false;
+    let currentSong = 'Charli xcx - Girl, so confusing.mp3';
+
+    function updateSong() {
+        songTitle.textContent = currentSong;
+    }
+
+    playPauseButton.addEventListener('click', function() {
+        if (isPlaying) {
+            playPauseButton.classList.remove('fa-pause');
+            playPauseButton.classList.add('fa-play');
+            // Pausar la canción
+            console.log('Pausar canción');
+        } else {
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+            // Reproducir la canción
+            console.log('Reproducir canción');
+        }
+        isPlaying = !isPlaying;
+    });
+
+    forwardButton.addEventListener('click', function() {
+        currentSong = currentSong === 'Charli xcx - Girl, so confusing.mp3' 
+            ? 'Blue Foundation - Eyes On Fire.mp3' 
+            : 'Charli xcx - Girl, so confusing.mp3';
+        updateSong();
+        console.log('Siguiente canción:', currentSong);
+    });
+
+    backwardButton.addEventListener('click', function() {
+        currentSong = currentSong === 'Charli xcx - Girl, so confusing.mp3' 
+            ? 'Blue Foundation - Eyes On Fire.mp3' 
+            : 'Charli xcx - Girl, so confusing.mp3';
+        updateSong();
+        console.log('Canción anterior:', currentSong);
+    });
+});
