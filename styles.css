@@ -99,6 +99,7 @@ html, body {
 }
 
 
+
 /* Contenedor del reproductor DE MUSICA WOOOOOOOOOOOOOOOOOOOOO */
 .player {
     position: absolute;
@@ -106,26 +107,26 @@ html, body {
     right: 0;
 }
 
-/* Contenedor del botón play/pause */
-#playPauseButton {
+/* Botón play */
+#playButton {
     position: absolute;
     bottom: 151px;
-    right: 100px; /* Posición general del contenedor */
+    right: 98px;
     font-size: 20px;
     color: black;
     cursor: pointer;
-}
-
-/* Botón play */
-#playPauseButton .fa-play {
-    position: absolute;
-    right: 98px; /* Posición específica para el ícono play */
+    display: none; /* Oculto por defecto */
 }
 
 /* Botón pause */
-#playPauseButton .fa-pause {
+#pauseButton {
     position: absolute;
-    right: 100px; /* Posición específica para el ícono pause */
+    bottom: 151px;
+    right: 100px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    display: none; /* Oculto por defecto */
 }
 
 /* Botón forward */
