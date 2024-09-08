@@ -59,7 +59,7 @@ html, body {
 .rectangle {
     position: absolute;
 }
-/* Estilo de la sección 2 */
+
 /* Estilo de la sección 2 */
 .section2 {
     position: absolute;
@@ -98,7 +98,7 @@ html, body {
     filter: brightness(0) invert(1) drop-shadow(0 0 13px rgba(0, 0, 0, 1)) drop-shadow(0 0 13px rgba(0, 0, 0, 0.58)); /* Cambia el brillo y añade sombra al pasar el mouse */
 }
 
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
+/* SECTION 3 */
 .section-3 {
     position: relative;
     width: 433px;
@@ -107,15 +107,14 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1; /* Asegura que esté detrás de la sección 2 y 4 */
-    pointer-events: none; /* Para evitar interacción con la imagen de fondo */
-    user-select: none; /* Para evitar selección de texto */
-    -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
+
 /* Contenedor del reproductor */
 .player {
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 2; /* Asegura que los botones estén por encima de otros elementos */
 }
 
 /* Botón play/pause */
@@ -148,7 +147,6 @@ html, body {
     cursor: pointer;
 }
 
-
 .fondo-section3 {
     width: 100%;
     height: auto;
@@ -158,9 +156,7 @@ html, body {
     -webkit-user-drag: none;
 }
 
-
-/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa SECTION4 */
-
+/* SECTION 4 */
 .section-4 {
     width: 433px;
     height: 120px;
@@ -190,8 +186,6 @@ html, body {
     z-index: 1; /* Coloca la imagen detrás del texto */
 }
 
-
-
 .buttons {
     position: absolute;
     bottom: 12px;
@@ -220,7 +214,6 @@ html, body {
 .amigo3:hover {
     content: url('AMIGO3F.png'); /* Cambia la imagen al pasar el mouse */
 }
-
 
 .section4-text {
     color: black; /* Color negro para el texto */
