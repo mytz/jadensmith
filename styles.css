@@ -122,8 +122,8 @@ html, body {
 /* Botón play/pause */
 .play-button {
     position: absolute;
-    bottom: 30px;
-    right: 50px;
+    bottom: 40px;
+    right: 104px;
     height: 20px;
     width: 17px;
     font-size: 20px;
@@ -134,8 +134,8 @@ html, body {
 /* Botón forward */
 .forward-button {
     position: absolute;
-    bottom: 35px;
-    right: 20px;
+    bottom: 45px;
+    right: 79px;
     height: 12px;
     width: 15px;
     font-size: 12px;
@@ -146,8 +146,8 @@ html, body {
 /* Botón backward */
 .backward-button {
     position: absolute;
-    bottom: 35px;
-    right: 80px;
+    bottom: 45px;
+    right: 122px;
     height: 12px;
     width: 15px;
     font-size: 12px;
