@@ -37,7 +37,7 @@ document.addEventListener('mouseup', () => {
 
 
 
-// REPRODUCTOR DE MUSICA 
+// REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('playPauseButton');
     const forwardButton = document.getElementById('forwardButton');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
-    // Inicializar la primera canción y mostrar el botón de play
+    // Actualiza la canción y la etiqueta de título
     function updateSong() {
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSong();
     });
 
+    // Inicializar primera canción
+    updateSong();
+});
     // Inicializar la primera canción
     playPauseButton.classList.add('fa-play'); // Asegura que el botón de play esté visible al inicio
     updateSong();
