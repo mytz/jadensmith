@@ -100,7 +100,7 @@ html, body {
 
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
 .section-3 {
-    position: relative; /* Cambiar a relative para permitir que el padding-top funcione correctamente */
+    position: absolute;
     width: 433px;
     height: auto;
     padding-top: 125px; /* Espacio para empujar el contenido hacia abajo */
@@ -111,6 +111,17 @@ html, body {
     pointer-events: none; /* Para evitar interacción con la imagen de fondo */
     user-select: none; /* Para evitar selección de texto */
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
+}
+
+
+
+.fondo-section3 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 
