@@ -102,10 +102,10 @@ html, body {
 .section3 {
     position: absolute;
     width: 433px;
-    height: 120px; /* Altura fija para asegurarnos de que se muestre correctamente */
-    padding-top: 125px; /* Espacio para empujar el contenido hacia abajo */
+    height: 120px; /* Ajusta la altura según lo necesites */
+    top: calc(100% + 5px); /* Ajusta el espacio que desees debajo de la sección2 */
     background-image: url('FONDOSECTION3.png');
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center; /* Centra la imagen de fondo */
     z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
