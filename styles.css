@@ -98,6 +98,44 @@ html, body {
     filter: brightness(0) invert(1) drop-shadow(0 0 13px rgba(0, 0, 0, 1)) drop-shadow(0 0 13px rgba(0, 0, 0, 0.58)); /* Cambia el brillo y añade sombra al pasar el mouse */
 }
 
+
+/* Contenedor del reproductor DE MUSICA WOOOOOOOOOOOOOOOOOOOOO */
+.player {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Botón play/pause */
+#playPauseButton {
+    position: absolute;
+    bottom: 151px;
+    right: 100px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+/* Botón forward */
+#forwardButton {
+    position: absolute;
+    bottom: 155px;
+    right: 79px;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+}
+
+/* Botón backward */
+#backwardButton {
+    position: absolute;
+    bottom: 155px;
+    right: 122px;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+}
+
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
 .section-3 {
     position: relative;
@@ -110,42 +148,6 @@ html, body {
     pointer-events: none; /* Para evitar interacción con la imagen de fondo */
     user-select: none; /* Para evitar selección de texto */
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
-}
-/* Contenedor del reproductor */
-.player {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-/* Botón play/pause */
-#playPauseButton {
-    position: absolute;
-    bottom: 40px;
-    right: 100px;
-    font-size: 20px;
-    color: black;
-    cursor: pointer;
-}
-
-/* Botón forward */
-#forwardButton {
-    position: absolute;
-    bottom: 45px;
-    right: 79px;
-    font-size: 12px;
-    color: black;
-    cursor: pointer;
-}
-
-/* Botón backward */
-#backwardButton {
-    position: absolute;
-    bottom: 45px;
-    right: 122px;
-    font-size: 12px;
-    color: black;
-    cursor: pointer;
 }
 
 
