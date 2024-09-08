@@ -106,7 +106,7 @@ html, body {
     padding-top: 125px; /* Espacio para empujar el contenido hacia abajo */
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
+    z-index: -1; /* Asegura que esté detrás de la sección 2 y 4 */
     pointer-events: none; /* Para evitar interacción con la imagen de fondo */
     user-select: none; /* Para evitar selección de texto */
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
@@ -118,7 +118,6 @@ html, body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    z-index: 0; /* Asegura que esté detrás de la sección 2 y 4 */
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
