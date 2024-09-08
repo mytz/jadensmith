@@ -149,6 +149,36 @@ html, body {
     cursor: pointer;
 }
 
+/* Estilo del texto de la canción */
+#songTitle {
+    position: absolute;
+    bottom: 181px;
+    right: 5px;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    font-family: "Space Mono", monospace; /* Aplicar la fuente deseada */
+    font-size: 12px; /* Ajustar el tamaño de la fuente si es necesario */
+}
+
+#songTitle::after {
+    content: attr(data-text);
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
 /* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
 .section-3 {
     position: relative;
