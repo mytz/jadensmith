@@ -111,7 +111,6 @@ html, body {
     user-select: none; /* Para evitar selección de texto */
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
-
 /* Contenedor del reproductor */
 .player {
     position: absolute;
