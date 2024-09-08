@@ -106,14 +106,26 @@ html, body {
     right: 0;
 }
 
-/* Botón play/pause */
+/* Contenedor del botón play/pause */
 #playPauseButton {
     position: absolute;
     bottom: 151px;
-    right: 100px;
+    right: 100px; /* Posición general del contenedor */
     font-size: 20px;
     color: black;
     cursor: pointer;
+}
+
+/* Botón play */
+#playPauseButton .fa-play {
+    position: absolute;
+    right: 98px; /* Posición específica para el ícono play */
+}
+
+/* Botón pause */
+#playPauseButton .fa-pause {
+    position: absolute;
+    right: 100px; /* Posición específica para el ícono pause */
 }
 
 /* Botón forward */
