@@ -123,7 +123,7 @@ html, body {
 #playPauseButton {
     position: absolute;
     bottom: 40px;
-    right: 104px;
+    right: 100px;
     font-size: 20px;
     color: black;
     cursor: pointer;
