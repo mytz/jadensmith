@@ -40,41 +40,43 @@ document.addEventListener('mouseup', () => {
 // REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('playPauseButton');
-    const forwardButton = document.querySelector('.forward-button');
-    const backwardButton = document.querySelector('.backward-button');
+    const forwardButton = document.getElementById('forwardButton');
+    const backwardButton = document.getElementById('backwardButton');
     const songTitle = document.getElementById('songTitle');
     
     let isPlaying = false;
     let currentSong = 'Charli xcx - Girl, so confusing.mp3';
 
+    // Función para actualizar el título de la canción
     function updateSong() {
         songTitle.textContent = currentSong;
     }
 
+    // Evento para el botón de play/pause
     playPauseButton.addEventListener('click', function() {
         if (isPlaying) {
             playPauseButton.classList.remove('fa-pause');
             playPauseButton.classList.add('fa-play');
-            // Aquí deberías añadir la lógica para pausar la canción
+            // Aquí iría la lógica para pausar la canción
             console.log('Pausar canción');
         } else {
             playPauseButton.classList.remove('fa-play');
             playPauseButton.classList.add('fa-pause');
-            // Aquí deberías añadir la lógica para reproducir la canción
+            // Aquí iría la lógica para reproducir la canción
             console.log('Reproducir canción');
         }
         isPlaying = !isPlaying;
     });
 
+    // Evento para el botón de forward
     forwardButton.addEventListener('click', function() {
-        // Aquí puedes añadir la lógica para avanzar a la siguiente canción
         currentSong = 'Blue Foundation - Eyes On Fire.mp3';
         updateSong();
         console.log('Siguiente canción:', currentSong);
     });
 
+    // Evento para el botón de backward
     backwardButton.addEventListener('click', function() {
-        // Aquí puedes añadir la lógica para retroceder a la canción anterior
         currentSong = 'Charli xcx - Girl, so confusing.mp3';
         updateSong();
         console.log('Canción anterior:', currentSong);
