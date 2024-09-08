@@ -40,46 +40,49 @@ document.addEventListener('mouseup', () => {
 // REPRODUCTOR DE MUSICA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 document.addEventListener('DOMContentLoaded', function() {
     const playPauseButton = document.getElementById('playPauseButton');
-    const forwardButton = document.querySelector('.forward-button');
-    const backwardButton = document.querySelector('.backward-button');
+    const forwardButton = document.getElementById('forwardButton');
+    const backwardButton = document.getElementById('backwardButton');
     const songTitle = document.getElementById('songTitle');
+    const audioPlayer = document.getElementById('audioPlayer');
 
-    let isPlaying = false;
-    let currentSong = 'Charli xcx - Girl, so confusing.mp3';
-    const songs = ['Charli xcx - Girl, so confusing.mp3', 'Blue Foundation - Eyes On Fire.mp3'];
+    const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     let songIndex = 0;
 
+    // Actualiza la canción y la etiqueta de título
     function updateSong() {
-        currentSong = songs[songIndex];
-        songTitle.textContent = currentSong;
+        audioPlayer.src = songs[songIndex];
+        songTitle.textContent = songs[songIndex];
+        audioPlayer.play();
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
     }
 
+    // Manejar Play/Pause
     playPauseButton.addEventListener('click', function() {
-        if (isPlaying) {
-            // Cambiar a ícono de "play"
-            playPauseButton.classList.remove('fa-pause');
-            playPauseButton.classList.add('fa-play');
-            // Pausar la canción
-            console.log('Pausar canción');
-        } else {
-            // Cambiar a ícono de "pause"
+        if (audioPlayer.paused) {
+            audioPlayer.play();
             playPauseButton.classList.remove('fa-play');
             playPauseButton.classList.add('fa-pause');
-            // Reproducir la canción
-            console.log('Reproducir canción');
+        } else {
+            audioPlayer.pause();
+            playPauseButton.classList.remove('fa-pause');
+            playPauseButton.classList.add('fa-play');
         }
-        isPlaying = !isPlaying;
     });
 
+    // Manejar Forward
     forwardButton.addEventListener('click', function() {
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
-        console.log('Siguiente canción:', currentSong);
     });
 
+    // Manejar Backward
     backwardButton.addEventListener('click', function() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
-        console.log('Canción anterior:', currentSong);
     });
+
+    // Inicializar primera canción
+    updateSong();
 });
+
