@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Actualiza la canción y la etiqueta de título
     function updateSong() {
+        console.log('Updating song to:', songs[songIndex]); // Verificar la canción actual
         audioPlayer.src = songs[songIndex];
         songTitle.textContent = songs[songIndex];
         audioPlayer.play();
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar Play/Pause
     playPauseButton.addEventListener('click', function() {
+        console.log('Play/Pause button clicked'); // Verificar clic en el botón
         if (audioPlayer.paused) {
             audioPlayer.play();
             playPauseButton.classList.remove('fa-play');
@@ -72,12 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar Forward
     forwardButton.addEventListener('click', function() {
+        console.log('Forward button clicked'); // Verificar clic en el botón
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
     });
 
     // Manejar Backward
     backwardButton.addEventListener('click', function() {
+        console.log('Backward button clicked'); // Verificar clic en el botón
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
     });
