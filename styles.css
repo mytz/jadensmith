@@ -114,6 +114,7 @@ html, body {
     position: absolute;
     bottom: 0;
     right: 0;
+    pointer-events: all; /* Asegura que los botones sean clicables */
     z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
 }
 
@@ -126,7 +127,15 @@ html, body {
     color: black;
     cursor: pointer;
     z-index: 10;
+    pointer-events: auto;
 }
+#playPauseButton.fa-pause {
+    display: none; /* Oculta el botón de pausa */
+}
+#playPauseButton.fa-play {
+    display: inline; /* Asegura que el botón de play esté visible */
+}
+
 
 /* Botón forward */
 #forwardButton {
@@ -137,6 +146,7 @@ html, body {
     color: black;
     cursor: pointer;
     z-index: 10;
+    pointer-events: auto;
 }
 
 /* Botón backward */
@@ -148,6 +158,7 @@ html, body {
     color: black;
     cursor: pointer;
     z-index: 10;
+    pointer-events: auto;
 }
 
 .fondo-section3 {
