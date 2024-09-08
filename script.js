@@ -53,31 +53,39 @@ document.addEventListener('DOMContentLoaded', function() {
         songTitle.textContent = songs[songIndex];
     }
 
+    function updateButton() {
+        if (audioPlayer.paused) {
+            playPauseButton.classList.remove('fa-pause');
+            playPauseButton.classList.add('fa-play');
+        } else {
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+        }
+    }
+
     playPauseButton.addEventListener('click', function() {
         if (audioPlayer.paused) {
             audioPlayer.play();
-            playPauseButton.classList.remove('fa-play');
-            playPauseButton.classList.add('fa-pause');
         } else {
             audioPlayer.pause();
-            playPauseButton.classList.remove('fa-pause');
-            playPauseButton.classList.add('fa-play');
         }
+        updateButton(); // Actualiza el botón después de reproducir o pausar
     });
 
     forwardButton.addEventListener('click', function() {
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
         audioPlayer.play();
+        updateButton(); // Actualiza el botón después de cambiar la canción
     });
 
     backwardButton.addEventListener('click', function() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
         audioPlayer.play();
+        updateButton(); // Actualiza el botón después de cambiar la canción
     });
 
-    playPauseButton.classList.add('fa-play'); // Mostrar el botón de Play al inicio
+    updateButton(); // Asegura que el botón esté en el estado correcto al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
-
