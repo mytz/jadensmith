@@ -117,14 +117,15 @@ html, body {
     position: absolute;
     bottom: 0;
     right: 0;
-    /* Sin padding adicional */
 }
 
-/* Botón play */
+/* Botón play/pause */
 .play-button {
     position: absolute;
     bottom: 30px;
     right: 50px;
+    height: 20px;
+    width: 17px;
     font-size: 20px;
     color: black;
     cursor: pointer;
@@ -134,9 +135,10 @@ html, body {
 .forward-button {
     position: absolute;
     bottom: 35px;
-    right: 40px;
+    right: 20px;
+    height: 12px;
+    width: 15px;
     font-size: 12px;
-    width: 15px; /* Ancho específico */
     color: black;
     cursor: pointer;
 }
@@ -145,9 +147,10 @@ html, body {
 .backward-button {
     position: absolute;
     bottom: 35px;
-    right: 60px;
+    right: 80px;
+    height: 12px;
+    width: 15px;
     font-size: 12px;
-    width: 15px; /* Ancho específico */
     color: black;
     cursor: pointer;
 }
