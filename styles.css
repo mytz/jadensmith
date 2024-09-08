@@ -98,7 +98,31 @@ html, body {
     filter: brightness(0) invert(1) drop-shadow(0 0 13px rgba(0, 0, 0, 1)) drop-shadow(0 0 13px rgba(0, 0, 0, 0.58)); /* Cambia el brillo y añade sombra al pasar el mouse */
 }
 
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 4 */
+/* AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA SECTION 3 */
+.section3 {
+    position: absolute;
+    bottom: 120px; /* Ajusta según sea necesario para que la sección 4 esté justo encima */
+    width: 433px;
+    height: auto;
+    background-image: url('FONDOSECTION3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0; /* Menor que el z-index de la sección 4 */
+    pointer-events: none; /* Para evitar interacción con la imagen de fondo */
+    user-select: none; /* Para evitar selección de texto */
+    -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
+}
+
+.fondo-section3 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa SECTION4 */
 
 .section-4 {
     width: 433px;
