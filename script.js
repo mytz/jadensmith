@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
         pauseButton.style.display = 'none';
     }
 
+    function nextSong() {
+        songIndex = (songIndex + 1) % songs.length;
+        updateSong();
+        playAudio(); // Reproduce la canción automáticamente
+    }
+
     playButton.addEventListener('click', function() {
         playAudio();
     });
@@ -75,15 +81,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     forwardButton.addEventListener('click', function() {
-        songIndex = (songIndex + 1) % songs.length;
-        updateSong();
-        playAudio(); // Reproduce la canción automáticamente
+        nextSong(); // Avanza a la siguiente canción
     });
 
     backwardButton.addEventListener('click', function() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         updateSong();
         playAudio(); // Reproduce la canción automáticamente
+    });
+
+    audioPlayer.addEventListener('ended', function() {
+        nextSong(); // Avanza a la siguiente canción cuando la actual termine
     });
 
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
