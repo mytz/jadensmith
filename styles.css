@@ -68,7 +68,7 @@ html, body {
     width: 433px; /* Ancho igual a la imagen de fondo */
     height: 137px; /* Alto igual a la imagen de fondo */
     overflow: hidden; /* Evita que la sombra se desborde */
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* Sombra paralela negra */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 99); /* Sombra paralela negra */
     z-index: 0; /* Debajo de la sección 1 */
 }
 
@@ -135,7 +135,7 @@ html, body {
     transform: translateX(-50%);
     background-image: url('FRIENDSFONDO.png');
     background-size: cover;
-    box-shadow: 0px 0px 40px 6% black;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 99);
     overflow: hidden; /* Asegura que los botones no sobresalgan */
 }
 
