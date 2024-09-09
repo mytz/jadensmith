@@ -41,36 +41,41 @@ document.addEventListener('mouseup', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightButton');
-    const minButton = document.getElementById('minButton');
+    const minimizeButton = document.getElementById('minimizeButton');
     const body = document.body;
 
-    let isLightOn = true; // Estado del fondo
-    let isMinimized = false; // Estado de la ventana
+    let isLightOn = true;
+    let isExpanded = false;
 
-    // Función para manejar el botón de luz
     lightButton.addEventListener('click', function() {
         if (isLightOn) {
             body.style.backgroundImage = "url('fondo1.png')";
-            lightButton.classList.add('lightOff');
+            lightButton.src = 'LIGHTSOFF1.png';
+            lightButton.onmouseover = () => lightButton.src = 'LIGHTSOFF2.png';
+            lightButton.onmouseout = () => lightButton.src = 'LIGHTSOFF1.png';
         } else {
             body.style.backgroundImage = "url('fondo2.png')";
-            lightButton.classList.remove('lightOff');
+            lightButton.src = 'LIGHTSON1.png';
+            lightButton.onmouseover = () => lightButton.src = 'LIGHTSON2.png';
+            lightButton.onmouseout = () => lightButton.src = 'LIGHTSON1.png';
         }
         isLightOn = !isLightOn;
     });
 
-    // Función para manejar el botón de minimizar/maximizar
-    minButton.addEventListener('click', function() {
-        if (isMinimized) {
-            // Aquí agregamos la lógica para maximizar la ventana
-            minButton.classList.remove('expand');
+    minimizeButton.addEventListener('click', function() {
+        if (isExpanded) {
+            minimizeButton.src = 'MIN1.png';
+            minimizeButton.onmouseover = () => minimizeButton.src = 'MIN2.png';
+            minimizeButton.onmouseout = () => minimizeButton.src = 'MIN1.png';
         } else {
-            // Aquí agregamos la lógica para minimizar la ventana
-            minButton.classList.add('expand');
+            minimizeButton.src = 'EXPAND1.png';
+            minimizeButton.onmouseover = () => minimizeButton.src = 'EXPAND2.png';
+            minimizeButton.onmouseout = () => minimizeButton.src = 'EXPAND1.png';
         }
-        isMinimized = !isMinimized;
+        isExpanded = !isExpanded;
     });
 });
+
 
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
