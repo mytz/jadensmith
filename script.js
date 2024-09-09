@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
         cdImage.classList.remove('rotate');
+        cdImage.style.transform = getComputedStyle(cdImage).transform; // Aplicar el estilo actual de rotación
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
         isPlaying = false;
@@ -140,9 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
         pauseButton.style.display = 'none';
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
-        const angle = getRotationAngle(cdImage);
         cdImage.classList.remove('rotate');
-        cdImage.style.transform = `rotate(${angle}deg)`;
+        cdImage.style.transform = getComputedStyle(cdImage).transform; // Aplicar el estilo actual de rotación
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
         isPlaying = false;
