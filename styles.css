@@ -195,7 +195,7 @@ html, body {
 #cdImage {
     position: absolute;
     bottom: -50px;
-    left: 5px;
+    left: 8px;
     width: 200px; /* Ajusta el tamaño según sea necesario */
     height: 200px; /* Ajusta el tamaño según sea necesario */
     transform-origin: center;
