@@ -35,8 +35,6 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
 });
 
-
-
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
@@ -124,6 +122,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(rotateStyle);
+
+    // Función para obtener el ángulo actual de rotación
+    function getRotationAngle(element) {
+        const style = window.getComputedStyle(element);
+        const matrix = new WebKitCSSMatrix(style.transform || style.webkitTransform);
+        return Math.round(Math.asin(matrix.m21) * (180 / Math.PI));
+    }
+
+    // Función para fijar la rotación en el ángulo actual
+    function setRotation(element, angle) {
+        element.style.transform = `rotate(${angle}deg)`;
+    }
+
+    // Actualizar el estilo inicial de rotación
+    function updateRotation() {
+        const angle = getRotationAngle(cdImage);
+        cdImage.style.transform = `rotate(${angle}deg)`;
+    }
+
+    // Ajustar la rotación del CD al hacer clic en pausa
+    function pauseAudio() {
+        audioPlayer.pause();
+        playButton.style.display = 'block';
+        pauseButton.style.display = 'none';
+
+        // Detener la rotación de la imagen del CD y fijar su ángulo
+        updateRotation();
+        cdImage.classList.remove('rotate');
+        spinSound.pause();
+        spinSound.currentTime = 0; // Reiniciar el sonido
+    }
 
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
