@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     const images = ['CD1.png', 'CD2.png'];
     let songIndex = 0;
+    let isPlaying = false;
 
     function updateSong() {
         audioPlayer.src = songs[songIndex];
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cdImage.style.display = 'block';
         cdImage.classList.add('rotate');
         spinSound.play();
+        isPlaying = true;
     }
 
     function pauseAudio() {
@@ -73,11 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
         pauseButton.style.display = 'none';
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
-        const rotation = getRotationAngle(cdImage);
         cdImage.classList.remove('rotate');
-        cdImage.style.transform = `rotate(${rotation}deg)`;
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
+        isPlaying = false;
     }
 
     function nextSong() {
@@ -129,13 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function getRotationAngle(element) {
         const style = window.getComputedStyle(element);
         const matrix = new WebKitCSSMatrix(style.transform || style.webkitTransform);
-        return Math.round(Math.asin(matrix.m21) * (180 / Math.PI));
-    }
-
-    // Actualizar el estilo inicial de rotación
-    function updateRotation() {
-        const angle = getRotationAngle(cdImage);
-        cdImage.style.transform = `rotate(${angle}deg)`;
+        return Math.round(Math.atan2(matrix.m21, matrix.m11) * (180 / Math.PI));
     }
 
     // Ajustar la rotación del CD al hacer clic en pausa
@@ -145,12 +140,15 @@ document.addEventListener('DOMContentLoaded', function() {
         pauseButton.style.display = 'none';
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
-        updateRotation();
+        const angle = getRotationAngle(cdImage);
         cdImage.classList.remove('rotate');
+        cdImage.style.transform = `rotate(${angle}deg)`;
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
+        isPlaying = false;
     }
 
+    // Actualizar el estado inicial del reproductor
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
