@@ -37,7 +37,41 @@ document.addEventListener('mouseup', () => {
 
 
 
-// REPRODUCTOR DE MUSICA
+// BOTONES DE LA BARRA!!!!!!!!!!!!!!!!!!!!!!
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lightButton = document.getElementById('lightButton');
+    const minButton = document.getElementById('minButton');
+    const body = document.body;
+
+    let isLightOn = true; // Estado del fondo
+    let isMinimized = false; // Estado de la ventana
+
+    // Función para manejar el botón de luz
+    lightButton.addEventListener('click', function() {
+        if (isLightOn) {
+            body.style.backgroundImage = "url('fondo1.png')";
+            lightButton.classList.add('lightOff');
+        } else {
+            body.style.backgroundImage = "url('fondo2.png')";
+            lightButton.classList.remove('lightOff');
+        }
+        isLightOn = !isLightOn;
+    });
+
+    // Función para manejar el botón de minimizar/maximizar
+    minButton.addEventListener('click', function() {
+        if (isMinimized) {
+            // Aquí agregamos la lógica para maximizar la ventana
+            minButton.classList.remove('expand');
+        } else {
+            // Aquí agregamos la lógica para minimizar la ventana
+            minButton.classList.add('expand');
+        }
+        isMinimized = !isMinimized;
+    });
+});
+
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
