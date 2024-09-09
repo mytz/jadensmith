@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
     const images = ['CD1.png', 'CD2.png'];
     let songIndex = 0;
-    let isPlaying = false;
 
     function updateSong() {
         audioPlayer.src = songs[songIndex];
@@ -65,11 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
         playButton.style.display = 'none';
         pauseButton.style.display = 'block';
 
-        // Mostrar la imagen del CD y hacerla girar
+        // Mostrar la imagen del CD y reanudar la rotación
         cdImage.style.display = 'block';
-        cdImage.classList.add('rotate');
+        cdImage.style.animationPlayState = 'running'; // Reanudar animación
         spinSound.play();
-        isPlaying = true;
     }
 
     function pauseAudio() {
@@ -78,12 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
         pauseButton.style.display = 'none';
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
-        cdImage.classList.remove('rotate');
-        const rotationAngle = getRotationAngle(cdImage); // Obtener el ángulo actual
-        cdImage.style.transform = `rotate(${rotationAngle}deg)`; // Aplicar el estilo actual de rotación
+        cdImage.style.animationPlayState = 'paused'; // Pausar animación
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
-        isPlaying = false;
     }
 
     function nextSong() {
@@ -114,14 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         nextSong(); // Avanza a la siguiente canción cuando la actual termine
     });
 
-    // Función para obtener el ángulo actual de rotación
-    function getRotationAngle(element) {
-        const style = window.getComputedStyle(element);
-        const matrix = new WebKitCSSMatrix(style.transform || style.webkitTransform);
-        return Math.round(Math.atan2(matrix.m21, matrix.m11) * (180 / Math.PI));
-    }
-
-    // Actualizar el estado inicial del reproductor
+    // Inicializar el reproductor
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
+
