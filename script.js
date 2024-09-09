@@ -159,3 +159,22 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
 
+
+// SONIDO DE LOS BOTONES
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn');
+
+    // Recorre cada botón
+    buttons.forEach(button => {
+        // Agrega un evento al pasar el mouse sobre el botón
+        button.addEventListener('mouseenter', () => {
+            // Crea un nuevo objeto de audio
+            const audio = new Audio('hover.wav');
+            // Reproduce el sonido
+            audio.play();
+        });
+    });
+});
+
+
