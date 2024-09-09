@@ -37,47 +37,46 @@ body {
 }
 /* COMIENZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
 
-.title-button {
-    height: 18px; /* Ajusta según el tamaño de las imágenes */
+.control-button {
     cursor: pointer;
-    padding-right: 5px; /* Padding por defecto */
-    transition: all 0.3s ease; /* Transición suave para hover */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #lightButton {
-    padding-right: 12px; /* Padding específico para el botón de luz */
+    padding-right: 12px;
 }
 
-#minButton {
-    padding-right: 5px; /* Padding específico para el botón de minimizar */
+#minimizeButton {
+    padding-right: 5px;
 }
 
-/* Efectos hover */
 #lightButton:hover {
     content: url('LIGHTSON2.png');
 }
 
-#minButton:hover {
+#minimizeButton:hover {
     content: url('MIN2.png');
 }
 
-/* Estilos cuando los botones están en estado de cambio */
-#lightButton.lightOff {
+/* Estado cuando se cambia el fondo */
+.light-off #lightButton {
     content: url('LIGHTSOFF1.png');
 }
 
-#lightButton.lightOff:hover {
+.light-off #lightButton:hover {
     content: url('LIGHTSOFF2.png');
 }
 
-#minButton.expand {
+.expand #minimizeButton {
     content: url('EXPAND1.png');
 }
 
-#minButton.expand:hover {
+.expand #minimizeButton:hover {
     content: url('EXPAND2.png');
 }
-
 /* TERMINOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
 
 
