@@ -47,30 +47,29 @@ document.addEventListener('DOMContentLoaded', function() {
     let isLightOn = true;
     let isExpanded = false;
 
+    // Función para actualizar el hover de los botones
+    function updateButtonHover(button, imgOn, imgOnHover, imgOff, imgOffHover) {
+        button.src = imgOn;
+        button.onmouseover = () => button.src = imgOnHover;
+        button.onmouseout = () => button.src = imgOn;
+    }
+
     lightButton.addEventListener('click', function() {
         if (isLightOn) {
             body.style.backgroundImage = "url('fondo1.png')";
-            lightButton.src = 'LIGHTSOFF1.png';
-            lightButton.onmouseover = () => lightButton.src = 'LIGHTSOFF2.png';
-            lightButton.onmouseout = () => lightButton.src = 'LIGHTSOFF1.png';
+            updateButtonHover(lightButton, 'LIGHTSOFF1.png', 'LIGHTSOFF2.png', 'LIGHTSOFF1.png', 'LIGHTSOFF2.png');
         } else {
             body.style.backgroundImage = "url('fondo2.png')";
-            lightButton.src = 'LIGHTSON1.png';
-            lightButton.onmouseover = () => lightButton.src = 'LIGHTSON2.png';
-            lightButton.onmouseout = () => lightButton.src = 'LIGHTSON1.png';
+            updateButtonHover(lightButton, 'LIGHTSON1.png', 'LIGHTSON2.png', 'LIGHTSON1.png', 'LIGHTSON2.png');
         }
         isLightOn = !isLightOn;
     });
 
     minimizeButton.addEventListener('click', function() {
         if (isExpanded) {
-            minimizeButton.src = 'MIN1.png';
-            minimizeButton.onmouseover = () => minimizeButton.src = 'MIN2.png';
-            minimizeButton.onmouseout = () => minimizeButton.src = 'MIN1.png';
+            updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
         } else {
-            minimizeButton.src = 'EXPAND1.png';
-            minimizeButton.onmouseover = () => minimizeButton.src = 'EXPAND2.png';
-            minimizeButton.onmouseout = () => minimizeButton.src = 'EXPAND1.png';
+            updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
         }
         isExpanded = !isExpanded;
     });
