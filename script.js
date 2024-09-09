@@ -38,6 +38,7 @@ document.addEventListener('mouseup', () => {
 
 
 // REPRODUCTOR DE MUSICA
+// REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
     const pauseButton = document.getElementById('pauseButton');
@@ -113,23 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
         nextSong(); // Avanza a la siguiente canción cuando la actual termine
     });
 
-    // Configurar la rotación utilizando CSS
-    const rotateStyle = document.createElement('style');
-    rotateStyle.innerHTML = `
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .rotate {
-            animation: rotation 2s infinite linear;
-        }
-    `;
-    document.head.appendChild(rotateStyle);
-
     // Función para obtener el ángulo actual de rotación
     function getRotationAngle(element) {
         const style = window.getComputedStyle(element);
@@ -141,4 +125,3 @@ document.addEventListener('DOMContentLoaded', function() {
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
-
