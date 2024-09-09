@@ -43,7 +43,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     user-select: none; /* Evita la selección de los botones */
-    pointer-events: all; /* Asegura que los eventos del mouse se registren */
 }
 
 #lightButton {
@@ -54,30 +53,40 @@ body {
     right: 5px; /* Ajusta el espacio según sea necesario */
 }
 
-#lightButton:hover {
+/* Estilo por defecto para el botón de luz */
+#lightButton.default {
+    content: url('LIGHTSON1.png');
+}
+
+#lightButton.default:hover {
     content: url('LIGHTSON2.png');
 }
 
-#minimizeButton:hover {
-    content: url('MIN2.png');
-}
-
-/* Estado cuando se cambia el fondo */
-.light-off #lightButton {
+#lightButton.off {
     content: url('LIGHTSOFF1.png');
 }
 
-.light-off #lightButton:hover {
+#lightButton.off:hover {
     content: url('LIGHTSOFF2.png');
 }
 
-.expand #minimizeButton {
+/* Estilo por defecto para el botón de minimizar */
+#minimizeButton.default {
+    content: url('MIN1.png');
+}
+
+#minimizeButton.default:hover {
+    content: url('MIN2.png');
+}
+
+#minimizeButton.expanded {
     content: url('EXPAND1.png');
 }
 
-.expand #minimizeButton:hover {
+#minimizeButton.expanded:hover {
     content: url('EXPAND2.png');
 }
+
 
 /* TERMINOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
 
