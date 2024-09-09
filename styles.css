@@ -194,7 +194,7 @@ html, body {
 /* Estilo para la imagen del CD */
 #cdImage {
     position: absolute;
-    bottom: -50px;
+    bottom: -45px;
     left: 8px;
     width: 200px; /* Ajusta el tamaño según sea necesario */
     height: 200px; /* Ajusta el tamaño según sea necesario */
