@@ -36,6 +36,7 @@ document.addEventListener('mouseup', () => {
 });
 
 
+
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Detener la rotación de la imagen del CD y fijar su ángulo
         cdImage.classList.remove('rotate');
-        cdImage.style.transform = getComputedStyle(cdImage).transform; // Aplicar el estilo actual de rotación
+        const rotationAngle = getRotationAngle(cdImage); // Obtener el ángulo actual
+        cdImage.style.transform = `rotate(${rotationAngle}deg)`; // Aplicar el estilo actual de rotación
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
         isPlaying = false;
@@ -139,3 +141,4 @@ document.addEventListener('DOMContentLoaded', function() {
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
 });
+
