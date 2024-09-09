@@ -204,6 +204,21 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 5)) drop-shadow(0 0 11px rgba(0, 0, 0, 0.18));
 }
 
+/* CSS para la animación de rotación */
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotation 2s infinite linear;
+}
+
+
 
 
 .fondo-section3 {
