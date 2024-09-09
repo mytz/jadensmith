@@ -38,23 +38,23 @@ document.addEventListener('mouseup', () => {
 
 
 // BOTONES DE LA BARRA!!!!!!!!!!!!!!!!!!!!!!
+// Archivo: script.js
 document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightButton');
     const minimizeButton = document.getElementById('minimizeButton');
-    const body = document.body;
-    const rectangle = document.querySelector('.rectangle');
+    const buttons = document.querySelectorAll('.btn'); // Selecciona todos los botones .btn
+    const hoverSound = new Audio('hover.wav'); // Archivo de sonido para hover
 
     let isLightOn = true;
-    let isExpanded = true; // Predeterminado a expandido
+    let isExpanded = false;
 
-    // Función para actualizar el hover de los botones
-    function updateButtonHover(button, imgOn, imgOnHover, imgOff, imgOffHover) {
-        button.src = imgOn;
-        button.onmouseover = () => button.src = imgOnHover;
-        button.onmouseout = () => button.src = imgOn;
+    function playHoverSound() {
+        hoverSound.currentTime = 0; // Reiniciar el sonido para reproducirlo desde el principio
+        hoverSound.play();
     }
 
     lightButton.addEventListener('click', function() {
+        playHoverSound(); // Reproduce el sonido al hacer clic
         if (isLightOn) {
             body.style.backgroundImage = "url('fondo1.png')";
             updateButtonHover(lightButton, 'LIGHTSOFF1.png', 'LIGHTSOFF2.png', 'LIGHTSOFF1.png', 'LIGHTSOFF2.png');
@@ -66,20 +66,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     minimizeButton.addEventListener('click', function() {
+        playHoverSound(); // Reproduce el sonido al hacer clic
         if (isExpanded) {
-            // Minimizar el rectángulo
-            rectangle.style.height = '155px';
-            updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
-        } else {
-            // Expandir el rectángulo
-            rectangle.style.height = '382px';
             updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
+        } else {
+            updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
         }
         isExpanded = !isExpanded;
     });
 
-    // Inicializar el estado del botón de minimizar
-    updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', playHoverSound); // Reproduce el sonido al pasar el mouse
+    });
 });
 
 
