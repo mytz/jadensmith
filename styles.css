@@ -153,8 +153,8 @@ html, body {
 .songTitleWrapper {
     position: absolute;
     bottom: 181px; /* Ajustado para estar justo arriba de los botones */
-    right: 0;
-    width: 180px;
+    right: 8;
+    width: 205px;
     overflow: hidden; /* Oculta el contenido que desborda */
     font-family: 'Space Mono', monospace; /* Fuente para el texto */
 }
