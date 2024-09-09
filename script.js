@@ -72,8 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
         playButton.style.display = 'block';
         pauseButton.style.display = 'none';
 
-        // Detener la rotación de la imagen del CD
+        // Detener la rotación de la imagen del CD y fijar su ángulo
+        const rotation = getRotationAngle(cdImage);
         cdImage.classList.remove('rotate');
+        cdImage.style.transform = `rotate(${rotation}deg)`;
         spinSound.pause();
         spinSound.currentTime = 0; // Reiniciar el sonido
     }
@@ -128,11 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const style = window.getComputedStyle(element);
         const matrix = new WebKitCSSMatrix(style.transform || style.webkitTransform);
         return Math.round(Math.asin(matrix.m21) * (180 / Math.PI));
-    }
-
-    // Función para fijar la rotación en el ángulo actual
-    function setRotation(element, angle) {
-        element.style.transform = `rotate(${angle}deg)`;
     }
 
     // Actualizar el estilo inicial de rotación
