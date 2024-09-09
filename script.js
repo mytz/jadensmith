@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.btn');
+    const bratLogo = document.querySelector('.bratlogo'); // Selecciona el elemento con la clase .bratlogo
 
     // Recorre cada botón
     buttons.forEach(button => {
@@ -175,6 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.play();
         });
     });
+
+    // Agrega un evento para .bratlogo al pasar el mouse
+    if (bratLogo) {
+        bratLogo.addEventListener('mouseenter', () => {
+            const audio = new Audio('hover.wav');
+            audio.play();
+        });
+    }
 });
 
 
