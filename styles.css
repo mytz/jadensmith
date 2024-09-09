@@ -40,17 +40,18 @@ body {
 .control-button {
     cursor: pointer;
     position: absolute;
-    right: 0;
     top: 50%;
     transform: translateY(-50%);
+    user-select: none; /* Evita la selección de los botones */
+    pointer-events: all; /* Asegura que los eventos del mouse se registren */
 }
 
 #lightButton {
-    padding-right: 25px;
+    right: 12px; /* Ajusta el espacio según sea necesario */
 }
 
 #minimizeButton {
-    padding-right: 5px;
+    right: 5px; /* Ajusta el espacio según sea necesario */
 }
 
 #lightButton:hover {
@@ -77,6 +78,7 @@ body {
 .expand #minimizeButton:hover {
     content: url('EXPAND2.png');
 }
+
 /* TERMINOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
 
 
