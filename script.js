@@ -38,11 +38,11 @@ document.addEventListener('mouseup', () => {
 
 
 // BOTONES DE LA BARRA!!!!!!!!!!!!!!!!!!!!!!
-
 document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightButton');
     const minimizeButton = document.getElementById('minimizeButton');
     const body = document.body;
+    const rectangle = document.querySelector('.rectangle');
 
     let isLightOn = true;
     let isExpanded = false;
@@ -67,14 +67,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     minimizeButton.addEventListener('click', function() {
         if (isExpanded) {
-            updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
+            rectangle.style.height = '155px'; // Minimizar
+            minimizeButton.src = 'MIN1.png';
+            minimizeButton.onmouseover = () => minimizeButton.src = 'MIN2.png';
+            minimizeButton.onmouseout = () => minimizeButton.src = 'MIN1.png';
         } else {
-            updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
+            rectangle.style.height = '382px'; // Expandir
+            minimizeButton.src = 'EXPAND1.png';
+            minimizeButton.onmouseover = () => minimizeButton.src = 'EXPAND2.png';
+            minimizeButton.onmouseout = () => minimizeButton.src = 'EXPAND1.png';
         }
         isExpanded = !isExpanded;
     });
 });
-
 
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
