@@ -19,6 +19,7 @@ body {
     border: 1px solid #545454; /* Trazo interior */
     position: relative;
     overflow: hidden;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 15)) drop-shadow(0 0 11px rgba(0, 0, 0, 0.98));
 }
 
 /* Estilo de la barra superior (primera sección) */
