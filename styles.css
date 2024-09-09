@@ -371,3 +371,17 @@ html, body {
     font-weight: 700; /* Negrita */
 }
 
+
+
+
+/* Agregamos estilos para el botón mute */
+        .mute {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+            display: block;
+            width: 15px; /* Ancho ajustado a 10px */
+            height: 15px; /* Altura ajustada a 10px */
+            padding: 20px; /* Padding de 20px */
+        }
