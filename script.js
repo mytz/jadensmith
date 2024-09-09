@@ -35,7 +35,9 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
 });
 
-// REPRODUCTOR DE MÚSICA
+
+
+// REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
     const pauseButton = document.getElementById('pauseButton');
@@ -43,69 +45,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const backwardButton = document.getElementById('backwardButton');
     const songTitle = document.getElementById('songTitle');
     const audioPlayer = document.getElementById('audioPlayer');
-    const cdImage = document.createElement('img');
+    const cdImage = document.getElementById('cdImage');
     const spinSound = new Audio('spin.wav');
 
-    // Configurar imagen del CD
-    cdImage.style.position = 'absolute';
-    cdImage.style.bottom = '0';
-    cdImage.style.left = '0';
-    cdImage.style.zIndex = '10'; // Asegurar que esté por delante de "FONDOSECTION3.png"
-    cdImage.style.width = '100px'; // Ajustar el tamaño de la imagen según sea necesario
-    cdImage.style.height = '100px';
-    cdImage.style.transition = 'transform 0.1s linear';
-    document.querySelector('.section3').appendChild(cdImage);
-
-    const songs = [
-        { src: 'Charli_xcx_-_Girl_so_confusing.mp3', image: 'CD1.png' },
-        { src: 'Blue_Foundation_-_Eyes_On_Fire.mp3', image: 'CD2.png' }
-    ];
+    const songs = ['Charli_xcx_-_Girl_so_confusing.mp3', 'Blue_Foundation_-_Eyes_On_Fire.mp3'];
+    const images = ['CD1.png', 'CD2.png'];
     let songIndex = 0;
-    let isPlaying = false;
-    let spinInterval;
 
     function updateSong() {
-        audioPlayer.src = songs[songIndex].src;
-        songTitle.textContent = songs[songIndex].src;
-        cdImage.src = songs[songIndex].image;
+        audioPlayer.src = songs[songIndex];
+        songTitle.textContent = songs[songIndex];
+        cdImage.src = images[songIndex];
     }
 
     function playAudio() {
         audioPlayer.play();
         playButton.style.display = 'none';
         pauseButton.style.display = 'block';
-        startSpinning();
+
+        // Mostrar la imagen del CD y hacerla girar
+        cdImage.style.display = 'block';
+        cdImage.classList.add('rotate');
         spinSound.play();
-        isPlaying = true;
     }
 
     function pauseAudio() {
         audioPlayer.pause();
         playButton.style.display = 'block';
         pauseButton.style.display = 'none';
-        stopSpinning();
+
+        // Detener la rotación de la imagen del CD
+        cdImage.classList.remove('rotate');
         spinSound.pause();
-        isPlaying = false;
+        spinSound.currentTime = 0; // Reiniciar el sonido
     }
 
     function nextSong() {
         songIndex = (songIndex + 1) % songs.length;
         updateSong();
         playAudio(); // Reproduce la canción automáticamente
-    }
-
-    function startSpinning() {
-        stopSpinning(); // Detener cualquier intervalo previo
-        spinInterval = setInterval(() => {
-            if (isPlaying) {
-                cdImage.style.transform = `rotate(${(Date.now() / 10) % 360}deg)`;
-            }
-        }, 100);
-    }
-
-    function stopSpinning() {
-        clearInterval(spinInterval);
-        cdImage.style.transform = 'rotate(0deg)';
     }
 
     playButton.addEventListener('click', function() {
@@ -129,6 +107,23 @@ document.addEventListener('DOMContentLoaded', function() {
     audioPlayer.addEventListener('ended', function() {
         nextSong(); // Avanza a la siguiente canción cuando la actual termine
     });
+
+    // Configurar la rotación utilizando CSS
+    const rotateStyle = document.createElement('style');
+    rotateStyle.innerHTML = `
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .rotate {
+            animation: rotation 2s infinite linear;
+        }
+    `;
+    document.head.appendChild(rotateStyle);
 
     playButton.style.display = 'block'; // Mostrar el botón de Play al inicio
     updateSong(); // Actualizar la canción sin reproducir automáticamente
