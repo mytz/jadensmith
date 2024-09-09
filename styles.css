@@ -191,6 +191,26 @@ html, body {
     -webkit-user-drag: none; /* Para desactivar arrastre en navegadores WebKit */
 }
 
+#cdImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px; /* Ajusta el tamaño según lo necesites */
+    height: 100px; /* Ajusta el tamaño según lo necesites */
+    z-index: 2; /* Asegúrate de que esté delante de "FONDOSECTION3.png" */
+    animation: spin 0s linear infinite; /* Inicia sin rotación */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 
 .fondo-section3 {
     width: 100%;
