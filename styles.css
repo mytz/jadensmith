@@ -199,7 +199,6 @@ html, body {
     width: 200px; /* Ajusta el tamaño según sea necesario */
     height: 200px; /* Ajusta el tamaño según sea necesario */
     transform-origin: center;
-    display: none; /* Oculto por defecto */
     z-index: 5; /* Asegura que esté delante del fondo */
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 5)) drop-shadow(0 0 11px rgba(0, 0, 0, 0.98));
 }
