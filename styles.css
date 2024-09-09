@@ -36,6 +36,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9;
 }
 /* COMIENZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
 
@@ -127,7 +128,7 @@ html, body {
     height: 137px; /* Alto igual a la imagen de fondo */
     overflow: hidden; /* Evita que la sombra se desborde */
     box-shadow: 0 0 40px rgba(0, 0, 0, 99); /* Sombra paralela negra */
-    z-index: 0; /* Debajo de la sección 1 */
+    z-index: 8; /* Debajo de la sección 1 */
 }
 
 .section2-img {
