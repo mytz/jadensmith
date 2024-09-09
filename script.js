@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightButton');
     const minimizeButton = document.getElementById('minimizeButton');
     const body = document.body;
+    const rectangle = document.querySelector('.rectangle');
 
     let isLightOn = true;
-    let isExpanded = false;
+    let isExpanded = true; // Predeterminado a expandido
 
     // Función para actualizar el hover de los botones
     function updateButtonHover(button, imgOn, imgOnHover, imgOff, imgOffHover) {
@@ -64,22 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
         isLightOn = !isLightOn;
     });
 
-    // Inicializar el estado del botón de minimizar
-    updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
-
     minimizeButton.addEventListener('click', function() {
         if (isExpanded) {
-            // Cambiar a MIN1.png si está expandido
-            updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
-        } else {
-            // Cambiar a EXPAND1.png si está minimizado
+            // Minimizar el rectángulo
+            rectangle.style.height = '155px';
             updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
+        } else {
+            // Expandir el rectángulo
+            rectangle.style.height = '382px';
+            updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
         }
         isExpanded = !isExpanded;
-
-        // Ajustar la altura del rectángulo
-        document.querySelector('.rectangle').style.height = isExpanded ? '382px' : '155px';
     });
+
+    // Inicializar el estado del botón de minimizar
+    updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
 });
 
 
