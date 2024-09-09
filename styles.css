@@ -35,6 +35,51 @@ body {
     justify-content: center;
     align-items: center;
 }
+/* COMIENZOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.title-button {
+    height: 18px; /* Ajusta según el tamaño de las imágenes */
+    cursor: pointer;
+    padding-right: 5px; /* Padding por defecto */
+    transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+#lightButton {
+    padding-right: 12px; /* Padding específico para el botón de luz */
+}
+
+#minButton {
+    padding-right: 5px; /* Padding específico para el botón de minimizar */
+}
+
+/* Efectos hover */
+#lightButton:hover {
+    content: url('LIGHTSON2.png');
+}
+
+#minButton:hover {
+    content: url('MIN2.png');
+}
+
+/* Estilos cuando los botones están en estado de cambio */
+#lightButton.lightOff {
+    content: url('LIGHTSOFF1.png');
+}
+
+#lightButton.lightOff:hover {
+    content: url('LIGHTSOFF2.png');
+}
+
+#minButton.expand {
+    content: url('EXPAND1.png');
+}
+
+#minButton.expand:hover {
+    content: url('EXPAND2.png');
+}
+
+/* TERMINOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
 
 /* Estilo de la imagen en la barra superior */
 .title-img {
