@@ -327,6 +327,7 @@ html, body {
     gap: 18px; /* Espacio entre los botones */
     pointer-events: all; /* Permite la interacción con los botones */
     z-index: 3; /* Asegura que los botones estén por encima de la imagen de fondo y el texto */
+    user-select: none; /* Evita la selección de los botones */
 }
 
 .btn {
