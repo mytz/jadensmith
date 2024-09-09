@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightButton = document.getElementById('lightButton');
     const minimizeButton = document.getElementById('minimizeButton');
     const body = document.body;
-    const rectangle = document.querySelector('.rectangle');
 
     let isLightOn = true;
     let isExpanded = false;
@@ -65,21 +64,24 @@ document.addEventListener('DOMContentLoaded', function() {
         isLightOn = !isLightOn;
     });
 
+    // Inicializar el estado del botón de minimizar
+    updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
+
     minimizeButton.addEventListener('click', function() {
         if (isExpanded) {
-            rectangle.style.height = '155px'; // Minimizar
-            minimizeButton.src = 'MIN1.png';
-            minimizeButton.onmouseover = () => minimizeButton.src = 'MIN2.png';
-            minimizeButton.onmouseout = () => minimizeButton.src = 'MIN1.png';
+            // Cambiar a MIN1.png si está expandido
+            updateButtonHover(minimizeButton, 'MIN1.png', 'MIN2.png', 'MIN1.png', 'MIN2.png');
         } else {
-            rectangle.style.height = '382px'; // Expandir
-            minimizeButton.src = 'EXPAND1.png';
-            minimizeButton.onmouseover = () => minimizeButton.src = 'EXPAND2.png';
-            minimizeButton.onmouseout = () => minimizeButton.src = 'EXPAND1.png';
+            // Cambiar a EXPAND1.png si está minimizado
+            updateButtonHover(minimizeButton, 'EXPAND1.png', 'EXPAND2.png', 'EXPAND1.png', 'EXPAND2.png');
         }
         isExpanded = !isExpanded;
+
+        // Ajustar la altura del rectángulo
+        document.querySelector('.rectangle').style.height = isExpanded ? '382px' : '155px';
     });
 });
+
 
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
