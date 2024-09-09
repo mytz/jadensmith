@@ -20,7 +20,9 @@ body {
     position: relative;
     overflow: hidden;
     filter: drop-shadow(0 0 15px rgba(0, 0, 0, 15)) drop-shadow(0 0 11px rgba(0, 0, 0, 0.98));
+    transition: height 0.3s ease; /* Transición para altura */
 }
+
 
 /* Estilo de la barra superior (primera sección) */
 .title-bar {
