@@ -35,6 +35,7 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
 });
 
+
 // REPRODUCTOR DE MUSICA
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('playButton');
@@ -132,20 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const style = window.getComputedStyle(element);
         const matrix = new WebKitCSSMatrix(style.transform || style.webkitTransform);
         return Math.round(Math.atan2(matrix.m21, matrix.m11) * (180 / Math.PI));
-    }
-
-    // Ajustar la rotación del CD al hacer clic en pausa
-    function pauseAudio() {
-        audioPlayer.pause();
-        playButton.style.display = 'block';
-        pauseButton.style.display = 'none';
-
-        // Detener la rotación de la imagen del CD y fijar su ángulo
-        cdImage.classList.remove('rotate');
-        cdImage.style.transform = getComputedStyle(cdImage).transform; // Aplicar el estilo actual de rotación
-        spinSound.pause();
-        spinSound.currentTime = 0; // Reiniciar el sonido
-        isPlaying = false;
     }
 
     // Actualizar el estado inicial del reproductor
