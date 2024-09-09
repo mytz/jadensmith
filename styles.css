@@ -157,6 +157,7 @@ html, body {
     width: 205px;
     overflow: hidden; /* Oculta el contenido que desborda */
     font-family: 'Space Mono', monospace; /* Fuente para el texto */
+    font-size: 13px;
 }
 
 #songTitle {
