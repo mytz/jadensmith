@@ -8,8 +8,8 @@ let offsetY = 0;
 
 titleBar.addEventListener('mousedown', (e) => {
     isDragging = true;
-    offsetX = e.clientX - rectangle.getBoundingClientRect().left;
-    offsetY = e.clientY - rectangle.getBoundingClientRect().top;
+    offsetX = e.clientX - (rectangle.getBoundingClientRect().left + window.scrollX);
+    offsetY = e.clientY - (rectangle.getBoundingClientRect().top + window.scrollY);
 });
 
 document.addEventListener('mousemove', (e) => {
@@ -17,9 +17,10 @@ document.addEventListener('mousemove', (e) => {
         let xPos = e.clientX - offsetX;
         let yPos = e.clientY - offsetY;
 
-        // Limitar el movimiento a los bordes de la ventana
-        const rectWidth = rectangle.offsetWidth;
-        const rectHeight = rectangle.offsetHeight;
+        // Ajustar los márgenes según el zoom
+        const scale = 0.8;
+        const rectWidth = rectangle.offsetWidth * scale;
+        const rectHeight = rectangle.offsetHeight * scale;
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
 
@@ -34,6 +35,7 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
     isDragging = false;
 });
+
 
 
 
