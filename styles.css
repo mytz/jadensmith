@@ -22,7 +22,7 @@ body {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.95), 0 0 11px rgba(0, 0, 0, 0.98);
     transition: height 0.3s ease; /* Transición para altura */
     transform: scale(0.8); /* Aplicar zoom del 80% */
-    transform-origin: 0 0; /* Asegura que el zoom se aplique desde la esquina superior izquierda */
+    transform-origin: bottom right; /* Asegura que el zoom se aplique desde la esquina superior izquierda */
 }
 
 
